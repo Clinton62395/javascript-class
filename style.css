@@ -31,14 +31,14 @@ body div {
   animation: bounce 10s linear infinite alternate;
 } */
 
-@keyframes bounce {
+/* @keyframes bounce {
   from {
     transform: translate(-50px);
   }
   to {
     transform: translate(50px);
   }
-}
+} */
 
 h1 {
     width: 50%;

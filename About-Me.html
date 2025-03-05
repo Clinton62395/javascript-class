@@ -110,12 +110,6 @@
 
     }
     /* navbar styling */
-    .navbar {
-            background: linear-gradient(rgba(211, 18, 18, 0.5), rgba(7, 60, 173, 0.5)),
-                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4aBp7s-_hM7I_Lm9oOql64aC8SBZCfoHpg&s');
-            background-size: cover;
-            border: 5px ridge black;
-        }
 
         .nav-link:hover {
             background-color: #140401;
@@ -152,41 +146,49 @@
             </button>
     
             <!-- Contenu de la navbar -->
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
-                            Introduction to JavaScript
-                        </a>
-                    </li>
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="About-Me.html">About Me</a>
-                    </li>
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculators.html">
-                            Calculators
-                        </a>
-                    </li>
-    
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button" 
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Learn more
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="variables.html">Introduction to Bootstrap</a></li>
-                            <li><a class="dropdown-item" href="Keword.html">Some Bootstrap Components</a></li>
-                            <li><a class="dropdown-item" href="JS-display.html">Some Bootstrap Components</a></li>
-                            <li><a class="dropdown-item" href="displaye.html">Some Bootstrap Components</a></li>
-                            <li><a class="dropdown-item" href="functionjs.html">Some Bootstrap Components</a></li>
-                           
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+                <div class="container-fluid">
+        
+                    <!-- Bouton pour mobile -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!-- Contenu de la navbar -->
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item m-3">
+                                <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                                    Introduction to JavaScript
+                                </a>
+                            </li>
+                            <li class="nav-item m-3">
+                                <a class="nav-link active text-primary fs-3 fw-bold" href="About-Me.html">About Me</a>
+                            </li>
+                            <li class="nav-item m-3">
+                                <a class="nav-link active text-primary fs-3 fw-bold" href="calculators.html">
+                                    Calculators
+                                </a>
+                            </li>
+        
+                            <!-- Dropdown -->
+                            <li class="nav-item dropdown m-3">
+                                <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Learn more
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="variables.html">Variables</a></li>
+                                    <li><a class="dropdown-item" href="Keword.html"> Kewords </a></li>
+                                    <li><a class="dropdown-item" href="JS-display.html">JavaScript display</a></li>
+        
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                    </div>
+                </div>
+            </nav>
 
 
     <code class="mycode">

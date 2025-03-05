@@ -1,8 +1,8 @@
-body {
+/* body {
   color: wheat;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-}
+} */
 body div {
   width: 50%;
   border-top: 2px solid #f30707;
@@ -17,7 +17,7 @@ body div {
   cursor: pointer;
   position: relative;
 }
-img {
+/* img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -26,9 +26,10 @@ img {
   margin: 0 auto;
   filter: blur(10px);
   position: absolute;
+  background-size: cover;
 
   animation: bounce 10s linear infinite alternate;
-}
+} */
 
 @keyframes bounce {
   from {

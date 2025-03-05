@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What are the differences and similarities between let, var and const</title>
+    <link rel="stylesheet" href="exercis in js.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            box-sizing: border-box;
+            background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
+            background-size: cover;
+            z-index: -1;
+            animation: animation 15s linear infinite alternate;
+        }
+
+        @keyframes animation {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -100% 0;
+            }
+        }
+
+        .Similarities {
+            width: 80%;
+            background-color: rgb(179, 179, 223);
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 20px auto;
+            padding: 10px 10px;
+            font-size: 25px;
+            line-height: 1.5;
+            box-shadow: 10px 10px 5px #a8dda6;
+            border-left: 10px solid #a8dda6;
+            border-top: 10px solid #a8dda6;
+        }
+
+        h1 {
+            background-color: black;
+            color: yellow;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+
+
+        a {
+            color: rgb(255, 230, 0);
+            text-decoration: none;
+            transition: color 0.5s ease;
+            border: non solid black;
+            background-color: wheat;
+            margin: 10px 10px;
+            padding: 5px 10px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        a:hover {
+            color: red;
+            background-color: black;
+            text-decoration: underline;
+
+        }
+
+        nav {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: purple;
+        }
+
+        .link {
+            display: flex;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .link li {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .link li a {
+            text-decoration: none;
+            color: rgb(32, 7, 255);
+            display: block;
+        }
+
+        .drop-toggle {
+            display: flex;
+            position: relative;
+        }
+
+        .drop-toggle li {
+            margin: 0;
+            padding: 10px;
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+        .items {
+            display: none;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid black;
+            position: absolute;
+            color: yellow;
+        }
+
+        .drop-toggle:hover .items {
+            display: block;
+            padding: 5px;
+            margin: 0px;
+            border: none;
+        }
+        /* navbar styling */
+        .navbar {
+            background: linear-gradient(rgba(211, 18, 18, 0.5), rgba(7, 60, 173, 0.5)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4aBp7s-_hM7I_Lm9oOql64aC8SBZCfoHpg&s');
+            background-size: cover;
+            border: 5px ridge black;
+        }
+
+        .nav-link:hover {
+            background-color: #140401;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .dropdown-item {
+            background-color: #343a40;
+            color: white;
+        }
+
+        ;
+
+        .dropdown-item:hover {
+            background-color: #9c3826;
+            color: blue;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- My navbar for my differents pages -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+        <div class="container-fluid">
+            
+            <!-- Bouton pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenu de la navbar -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                            Introduction to JavaScript
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="About-Me.html">About Me</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculators.html">
+                            Calculators
+                        </a>
+                    </li>
+    
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn more
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="variables.html">Introduction to Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="Keword.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="JS-display.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="displaye.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="functionjs.html">Some Bootstrap Components</a></li>
+                           
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- __________________________________________________________________________________________________________ -->
+
+    <div class="Similarities animation3">
+
+        <h1>What are the differences and similarities between let, var and const?</h1>
+
+        <p>Similarities</p>
+        <ul>
+            <li> <b>Variable Declaration:</b> <br> All three (let, var, const) are used to declare variables.
+            </li>
+            <li><b>Storing Any Data Type: </b> <br> They can store any type of data, including strings, numbers,
+                objects,
+                arrays, etc.
+            </li>
+        </ul>
+        <p>Differences</p>
+        <ul>
+            <li> <b>let:</b> <br>
+                Has block scope. It is only accessible within the block (e.g., { ... }) it is declared.
+                <b>let:</b> Cannot be re-declared within the same scope. <br>
+            </li>
+
+            <li> <b>var:</b><br>
+                Has function scope. It is accessible anywhere within the function it is declared.
+                <b>var and let: </b>Can be assigned new values after their initial declaration. <br>
+            </li>
+            <li><b>const:</b> <br>
+                Has block scope, similar to let. It is only accessible within the block it is declared.
+                <b>const:</b>Cannot be re-declared within the same scope. <br>
+            </li>
+        </ul>
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in javascrip</title>
+</head>
+<body>
+
+    <p>welcome to my site of training</p>
+
+    <script>
+
+
+            // let userAge = prompt ( " how old are you?" );
+            // let GranteAcess;
+
+            // if (userAge> 18) {
+            //     GranteAcess = "Acess granted";
+            // }
+            // else {
+            //     parenPermission = confirm("do you have permission to access this page from yours parents?"); 
+            //     GranteAcess= (parenPermission)? "Acess granted" : "Acess denied";
+            // }
+            // console.log("GranteAcess");
+
+
+            function checkAge(age){
+                if (age>18) {
+                     return true;
+                } else return confirm ("do you have your parents permission?")         
+            } 
+                
+
+            let userAge = prompt ( " how old are you?" );
+            if(checkAge (userAge)){
+                alert("access granted");
+            } else{
+                alert ("access denied");
+            };
+
+
+
+    </script>
+</body>
+</html>

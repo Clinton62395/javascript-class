@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+ 
+
+    <script>
+        // const name ="billy doumbouya";
+        // const age = "20";
+        // const sentence = `My name is ${name} I am ${age}`;
+        // console.log(sentence);
+
+        const num1 = 1234;
+        const num2 = Number("123");
+        const total = num1 + num2;
+        console.log(total);
+
+        //convert string to number
+        const nmB1 = "hello";
+        const nmB2 = Number("1234")
+        console.log(nmB1 + nmB2);
+
+
+        //string() convert number to string
+        const str1 = "hello";
+        const str2 = String("123");
+        console.log(str1 + str2);
+
+
+        //boolean() type true or false
+        let isBoy = true;
+        console.log(isBoy);
+        let isGirl = false;
+        console.log(isGirl);
+
+        let Test = Boolean("10");
+        console.log(Test);
+
+        //undefined - no value
+        let Smart;
+        console.log(Smart);
+
+        let someThing = undefined;
+        console.log(someThing);
+
+        //null - no value
+        let anotherthing = null;
+        console.log(anotherthing);
+
+        // non primitive types of data
+        let listOfFood = ["rice", " apple", "ananas", "orange", "beance"];
+        console.log(listOfFood);
+        console.log(listOfFood[2]);
+
+        let listOfDataTypes = [5, "hello", true, false, null, undefined];
+        console.log(listOfDataTypes);
+        console.log(listOfDataTypes[3]);
+
+        //objects with data
+
+        let mySelf = {
+            Firsname: "Billy",
+            lastname: "Doumbouya",
+            age: 30,
+            country: "Guinea",
+            attended: "valeMax coders hub",
+            favouritefouds: ["rice", "apple", "orange", "Beances"]
+        }
+        console.log(`My name is ${mySelf.Firsname} ${mySelf.lastname} I am ${mySelf.age} on of my favorite food is ${mySelf.favouritefouds[0]} I am from ${mySelf.country}`);
+
+        const allValuesMaxStudent = [
+            { name: "Billy", age: 34, country: "Guinea" },
+            { name: "Dele", age: 40, country: "Nigeria" },
+            { name: "Tobi", age: 40, country: "Nigeria" },
+            { name: "Musa", age: 15, country: "Senegal" },
+            { name: "Thiam", age: 24, country: "Morocco" },
+            { name: "fabrice", age: 28, country: "Togo" },
+
+        ]
+        console.log(`${allValuesMaxStudent[2].name} is  ${allValuesMaxStudent[2].age} years old and his is from ${allValuesMaxStudent[2].country}`);[[[]]]
+
+        // function go(){
+        //     let a = 2
+        //     console.log(`inside de function ${a}`)
+        // };
+        // let result = go();
+        // console.log(`ouside the function ${result}`);
+
+        // let Text = `This is a boy
+        //             my name is`
+
+        // console.log(Text);  
+
+
+        // let a = 8
+        // let b = 5
+        //Arithmetic operations
+        // let c = a**b
+        // console.log(c);
+
+        // let d = ++a
+        // console.log(d);
+
+        // let e = --b
+        // console.log(e);
+
+        //assignment operators
+        // b+=5
+        // console.log(b)
+        // a-=4
+        // console.log(a)
+
+        // b/=2
+        // console.log(b)
+
+        // a*=2
+        // console.log(a)
+
+        // b%=2
+        // console.log(b);
+
+        // a**=3
+        // console.log(a);
+
+        //comparison operator
+        // let c = 3=="2"
+        // console.log(c)
+
+        // let c = 3==="3"
+        // console.log(c)
+
+        // let c = 5!=="5"
+        // console.log(c)  //is not equal to
+
+        let c = 5 <= 5;
+        console.log(c);
+
+        //logical operator and(&&) or(II) not(!)
+        console.log(3 === 3 && 2 < 5);
+
+        console.log((2 < 1 && 1 == "1") && 2 > 3);
+
+        console.log(3 < 5 || 2 === 3);
+        let a = ""
+        console.log(!a);
+        let j = 0;
+
+        console.log(!j);
+
+        const listOfItemShop = ["phone", "hearphone", "casque", "cap", "rings"];
+
+        const personInformation = {
+            name: "Mr Dele",
+            age: 30,
+            country: "Nigeria",
+            Profession: "teacher",
+            otherNames: ["Daouda", "Musa"],
+            collectedInformation: function () {
+                return ` hi my name is ${this.name} I am ${this.age} years old my country is ${this.country} and my profession is ${this.Profession} one of my other names is ${this.otherNames[0]}`;
+            }
+
+        };
+        console.log(personInformation.collectedInformation());
+
+        const lisOfMyStudent = [
+            { name: "Mr Dele", age: 30, country: "Nigeria", profession: "teacher" },
+            { name: "Mr Billy", age: 25, country: "Guinea", profession: "doctor" },
+            { name: "Mr Tobi", age: 35, country: "Nigeria", profession: "engineer" },
+        ]
+        console.log(lisOfMyStudent);
+
+        //les classifications of operators in js
+
+        // ternary operators
+
+        const userage = prompt("enter your age");
+        const canUseAlchool = userage > 18 ? "allowed to use alchool" : "Not allowed to use alchool";
+        console.log( canUseAlchool);
+
+        const month = [
+            "january",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+
+        const indexmonth = new Date().getMonth();
+        console.log( indexmonth);
+
+        const currentMonth = month[indexmonth];
+        console.log(currentMonth);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

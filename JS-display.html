@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the ways to display JS Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
+        background-size: cover;
+        z-index: -1;
+        animation: animation 15s linear infinite alternate;
+    }
+
+    @keyframes animation {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -100% 0;
+        }
+    }
+
+    .display {
+        width: 80%;
+        background-color: rgb(179, 179, 223);
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 10px auto;
+        padding: 10px 10px;
+        line-height: 1.5;
+        font-size: 25px;
+        box-shadow: 10px 10px 5px #a8dda6;
+        border-left: 10px solid #a8dda6;
+        border-top: 10px solid #a8dda6;
+
+    }
+
+    h1 {
+        background-color: black;
+        color: yellow;
+        text-align: center;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    /* navbar styling */
+    .navbar {
+            background: linear-gradient(rgba(211, 18, 18, 0.5), rgba(7, 60, 173, 0.5)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4aBp7s-_hM7I_Lm9oOql64aC8SBZCfoHpg&s');
+            background-size: cover;
+            border: 5px ridge black;
+        }
+
+        .nav-link:hover {
+            background-color: #140401;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .dropdown-item {
+            background-color: #343a40;
+            color: white;
+        }
+
+        ;
+
+        .dropdown-item:hover {
+            background-color: #9c3826;
+            color: blue;
+            text-decoration: underline;
+        }
+
+
+    
+</style>
+
+<body>
+    <!-- My navbar for my differents pages -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+        <div class="container-fluid">
+            
+            <!-- Bouton pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenu de la navbar -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                            Introduction to JavaScript
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="my-links.html">Form</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="b-assignment.html">
+                            Bootstrap Modal and Accordion
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculator.html">
+                            Calculators
+                        </a>
+                    </li>
+    
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn more
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="b-boostr.html">Introduction to Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="b-buton-alert-tabs-modal.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="controleflow.html">JavaScript Control Flow</a></li>
+                            <li><a class="dropdown-item" href="exercice.html">JavaScript Assignment</a></li>
+                            <li><a class="dropdown-item" href="fonction-assignment.html">Retirement by JS 2</a></li>
+                            <li><a class="dropdown-item" href="function-civil-worker.html">Retirement by JS 2</a></li>
+                            <li><a class="dropdown-item" href="js-display.html">JS Display</a></li>
+                            <li><a class="dropdown-item" href="kewords.html">JS Keywords</a></li>
+                            <li><a class="dropdown-item" href="variables.html">JS Variables</a></li>
+                            <li><a class="dropdown-item" href="jshours.html">Click to see Time</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="display">
+        <h1>the Five ways to display JS Code</h1>
+        <ol>
+            <li> <b>console.log</b> <br>
+                The console.log method is used to display messages or variables in the browser's console, which you
+                can access through the developer tools (DevTools).
+            </li>
+            <li> <b>Alert Box:</b> <br>
+                The alert method displays a message in a modal dialog box, which must be dismissed by the user
+                before they can interact with the webpage again.
+            </li>
+            <li> <b>Document Write:</b><br>
+                The document.write method writes directly to the HTML document. However, it's not recommended for
+                modern web development because it can overwrite the entire document if used after the page has
+                loaded.
+            </li>
+            <li> <b>DOM Manipulation:</b><br>
+                By selecting an element in the HTML document using methods like getElementById, you can change its
+                content using the innerHTML property.
+            </li>
+            <li> <b>Browser Console in HTML:</b> <br>
+                You can also display JavaScript output in the browser's console by linking a function to an event,
+                such as onload in the "body" tag.
+
+                <p>Each method is useful in different contexts, so it's great to know various ways to display or
+                    debug JavaScript code!</p>
+            </li>
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
+        background-size: cover;
+        z-index: -1;
+        animation: animation 15s linear infinite alternate;
+    }
+
+    @keyframes animation {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -100% 0;
+        }
+    }
+
+    .mycode {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px auto;
+        display: block;
+        width: fit-content;
+        padding: 20px 40px;
+        line-height: 2;
+    }
+
+    a {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    a:hover {
+        background-color: antiquewhite;
+        color: blue;
+        font-size: 25px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #info {
+        background-color: rgb(22, 12, 12);
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        margin: auto;
+        padding: 20px;
+
+    }
+
+    h1 {
+        background-color: black;
+        color: yellow;
+        text-align: center;
+        width: fit-content;
+        margin: 20px auto;
+        padding: 20px;
+
+    }
+
+    h2 {
+        background-color: white;
+        color: red;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .paragraph {
+        font-size: 30px;
+        text-align: justify;
+        color: white;
+    }
+
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        background-color: black;
+        color: yellow;
+    }
+
+    th {
+        font-weight: bold;
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    td {
+        border: 1px solid yellow;
+        font-size: 20px;
+        padding: 20px;
+
+    }
+    /* navbar styling */
+    .navbar {
+            background: linear-gradient(rgba(211, 18, 18, 0.5), rgba(7, 60, 173, 0.5)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4aBp7s-_hM7I_Lm9oOql64aC8SBZCfoHpg&s');
+            background-size: cover;
+            border: 5px ridge black;
+        }
+
+        .nav-link:hover {
+            background-color: #140401;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .dropdown-item {
+            background-color: #343a40;
+            color: white;
+        }
+
+        ;
+
+        .dropdown-item:hover {
+            background-color: #9c3826;
+            color: blue;
+            text-decoration: underline;
+        }
+
+
+</style>
+
+<body>
+    <!-- My navbar for my differents pages -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+        <div class="container-fluid">
+            
+            <!-- Bouton pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenu de la navbar -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                            Introduction to JavaScript
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="About-Me.html">About Me</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculators.html">
+                            Calculators
+                        </a>
+                    </li>
+    
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn more
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="variables.html">Introduction to Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="Keword.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="JS-display.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="displaye.html">Some Bootstrap Components</a></li>
+                            <li><a class="dropdown-item" href="functionjs.html">Some Bootstrap Components</a></li>
+                           
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <code class="mycode">
+        const informationAboutMySelf = { <br>
+            &nbsp; Myfullname: "Billy Doumbouya", <br>
+            &nbsp; Nickname: "Clinton", <br>
+            &nbsp; age: 25, <br>
+            &nbsp; country: "Guinea", <br>
+            &nbsp; PhoneNumber: "623952011", <br>
+            &nbsp; Email: "billydoumbouya5210@gmail.com", <br>
+            &nbsp; civilStatus: "single", <br>
+            &nbsp; academicLevel: "Bachelor",  <br>
+        }; <br>
+
+        function clickMe() { <br>
+            document.getElementById("info").innerHTML = ` <br>
+                My name is:${informationAboutMySelf.Myfullname}. I can also be called: ${informationAboutMySelf.Nickname}. <br>
+                I am: ${informationAboutMySelf.age} years old. I am from ${informationAboutMySelf.country}. <br>
+                I can be contacted through: ${informationAboutMySelf.PhoneNumber} or by email at: ${informationAboutMySelf.Email}. <br>
+                I am ${informationAboutMySelf.civilStatus}. Finally, I graduated with a ${informationAboutMySelf.academicLevel} degree. <br>
+            `; <br>
+        }
+    </code>
+    <h1>My Personal Information</h1>
+    <p id="info"></p>
+    <button onclick="clickMe()">Click to see more</button> <br>
+
+    <h1>Differenciation between logical operators and comparison operator</h1>
+
+    <h2>Logical Operators</h2>
+    <p class="paragraph">Logical operators are used to combine multiple boolean expressions or conditions. They help in
+        creating complex conditionals by combining multiple comparisons.</p>
+
+    <h2>Comparison Operators</h2>
+    <p class="paragraph">Comparison operators are used to compare two values and determine their relative order.</p>
+
+
+
+
+    <table>
+        <tr>
+            <th>Logical Operators</th>
+            <th>Comparison Operators</th>
+        </tr>
+        <tr>
+            <td>&& (AND)</td>
+            <td>== (equal)</td>
+        </tr>
+        <tr>
+            <td>|| (OR)</td>
+            <td>!= (not equal)</td>
+        </tr>
+        <tr>
+            <td>! (NOT)</td>
+            <td>>, <,>=, <=< /td>
+        </tr>
+        <tr>
+            <td>typeof (type of)</td>
+            <td>instanceof (is an instance of)</td>
+        </tr>
+        <tr>
+            <td>in (property in)</td>
+            <td>includes (includes)</td>
+        </tr>
+    </table>
+
+    <script>
+        const informationAboutMySelf = {
+            Myfullname: "Billy Doumbouya",
+            Nickname: "Clinton",
+            age: 25,
+            country: "Guinea",
+            PhoneNumber: "623952011",
+            Email: "billydoumbouya5210@gmail.com",
+            civilStatus: "single",
+            academicLevel: "Bachelor",
+        };
+
+        console.log(informationAboutMySelf);
+
+        function clickMe() {
+            document.getElementById("info").innerHTML = `
+                My name is:${informationAboutMySelf.Myfullname}. I can also be called: ${informationAboutMySelf.Nickname}.
+                I am: ${informationAboutMySelf.age} years old. I am from ${informationAboutMySelf.country}.
+                I can be contacted through: ${informationAboutMySelf.PhoneNumber} or by email at: ${informationAboutMySelf.Email}.
+                I am ${informationAboutMySelf.civilStatus}. Finally, I graduated with a ${informationAboutMySelf.academicLevel} degree.
+            `;
+        }
+
+
+
+        const listOfDayOfTheWeek = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+        console.log(listOfDayOfTheWeek);
+        const theWholedate = new Date().getUTCDay();
+
+        const currentDate = listOfDayOfTheWeek[theWholedate];
+        console.log(currentDate);
+        alert(`hello welcom to my page, today is ${currentDate}`)
+
+
+
+        let age = 30;
+        let country = "Guinea";
+        let civilStatus = "single";
+        let academicLevel = "Master";
+
+        //Comparison Operators
+        // Comparison operators are used to compare two values and return a boolean(true or false).
+        // They are used in conditions to determine the relationship between values.Common comparison
+        //  operators include:
+
+        let a = 5;
+        let b = 10;
+
+        console.log(a > b);
+        console.log(a < b);
+        console.log(a === 5);
+        console.log(b !== 10);
+
+        // Logical Operators
+        // Logical operators are used to combine multiple boolean expressions or conditions.
+        //  They help in creating complex conditionals by combining multiple comparisons. 
+        // Common logical operators include:
+
+        let x = true;
+        let y = false;
+
+        console.log(x && y);
+        console.log(x || y);
+        console.log(!x);
+
+        // Combining Both Types of Operators
+
+        let billyAge = 30;
+        let hasJob = true;
+        let hasDegree = "Bachelor";
+
+        if (billyAge > 25 && hasJob && (hasDegree === "Bachelor" || hasDegree === "Master")) {
+            console.log("billy meets the criteria.");
+        } else {
+            console.log("billy does not meet the criteria.");
+        }
+
+        let Age = prompt("enter your age: ");
+        let answer = (age < 18) ?
+            "you can't leave" : "you can leave"
+        console.log(answer);
+
+
+
+
+
+
+
+    </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

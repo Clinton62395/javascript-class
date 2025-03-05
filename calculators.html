@@ -1,0 +1,327 @@
+!<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation by javascrip using</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
+        background-size: cover;
+        z-index: -1;
+        animation: animation 15s linear infinite alternate;
+    }
+
+    @keyframes animation {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -100% 0;
+        }
+    }
+
+    h1 {
+        color: yellow;
+        text-align: center;
+        margin: 10px 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        margin: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+    }
+
+    #mybirth {
+        color: white;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        margin: 10px 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+</style>
+
+<body>
+    <!-- My navbar for my differents pages -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+        <div class="container-fluid">
+
+            <!-- Bouton pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenu de la navbar -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                            Introduction to JavaScript
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="my-links.html">Form</a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="b-assignment.html">
+                            Bootstrap Modal and Accordion
+                        </a>
+                    </li>
+                    <li class="nav-item m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculator.html">
+                            Calculators
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown m-3">
+                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn more
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="b-boostr.html">Introduction to Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="b-buton-alert-tabs-modal.html">Some Bootstrap
+                                    Components</a></li>
+                            <li><a class="dropdown-item" href="controleflow.html">JavaScript Control Flow</a></li>
+                            <li><a class="dropdown-item" href="exercice.html">JavaScript Assignment</a></li>
+                            <li><a class="dropdown-item" href="fonction-assignment.html">Retirement by JS 2</a></li>
+                            <li><a class="dropdown-item" href="function-civil-worker.html">Retirement by JS 2</a></li>
+                            <li><a class="dropdown-item" href="js-display.html">JS Display</a></li>
+                            <li><a class="dropdown-item" href="kewords.html">JS Keywords</a></li>
+                            <li><a class="dropdown-item" href="variables.html">JS Variables</a></li>
+                            <li><a class="dropdown-item" href="jshours.html">Click to see Time</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator -->
+
+    <div class="container">
+        <div class="row ">
+            <h1>calculator</h1>
+
+            <div class="col col-md-4 col-lg-3 bg-primary">
+                <h2>RETIREMENT CALCULATOR</h2>
+
+                <input type="number" name="retirement-calculator" placeholder="enter your birth" id="birth"><br>
+                <button id="calculate">calculate when to retire</button>
+                <p id="retirement" style="text-align: center; color: yellow; font-size: 20px;"></p>
+
+
+            </div>
+
+            <div class="col col-md-4 col-lg-3 bg-success">
+                <h2>Simple Calculator</h2>
+                <input type="number" name="simple-calculator" placeholder="enter your figure" id="cal1"><br><br>
+                <p id="addsymbole" style="text-align: center; color: yellow; font-size: 20px;"></p>
+                <input type="number" name="simple-calculator" placeholder="enter your figure" id="cal2"><br>
+
+                <button onclick="add()">+</button>
+                <button onclick="subst()">-</button>
+                <button onclick="mult()">*</button>
+                <button onclick="division()">/</button>
+                <button onclick="modul()">%</button>
+                <button onclick="exponent()">**</button><br>
+                <p id="result" style="text-align: center; color: yellow; font-size: 20px;"></p>
+
+            </div>
+            <!-- Investment calculator -->
+            <div class="col col-md-4 col-lg-3 bg-danger">
+                <h2>investment Calculator</h2>
+                <input type="number" name="calculator-investment" placeholder="how much do you want to invest?"
+                    id="investment"><br><br>
+                    <select name="Duration" id="myduration">
+                        how long do you want to invest?
+                        <option value="0" selected>0 how long do you want to invest?</option>
+                        <option value="1 month">1 month</option>
+                        <option value="2 months">2 months</option>
+                        <option value="3 months">3 months</option>
+                        <option value="4 months">4 months</option>
+                        <option value="5 months">5 months</option>
+                        <option value="6 months">6 months</option>
+                        <option value="7 months">7 months</option>
+                        <option value="8 months">8 months</option>
+                        <option value="9 months">9 months</option>
+                        <option value="10 months">10 months</option>
+                        <option value="11 months">11 months</option>
+                        <option value="12 months">12 months</option>
+                    </select>
+                <p style="color: bisque;font-size: 16px;"><b>Note:</b>Our investissement rate is 20% interest</p>
+                <button id="caluculateInvestment">Calculate your investment rate</button>
+                <p id="rate" style="text-align: center; color: yellow; font-size: 20px;"></p>
+
+            </div>
+
+            <!-- Loan Calculator -->
+            <div class="col col-md-4 col-lg-3 bg-warning">
+                <h2>Loan Calculator</h2>
+                <input type="number" name="loan" placeholder="How much do you want to borrow?" id="myrate">
+                <select name="" id="selectmonth">How long do you want to borrow
+                    <option value="0" selected>0 How long do you want to borrow</option>
+                    <option value="1 year">1 year</option>
+                    <option value="2 years">2 years</option>
+                    <option value="3 years">3 years</option>
+                    <option value="4 years">4 years</option>
+                    <option value="5 years">5 years</option>
+                    <option value="6 years">6 years</option>
+                    <option value="7 years">7 years</option>
+                    <option value="8 years">8 years</option>
+                    <option value="9 years">9 years</option>
+                    <option value="10 years">10 years</option>
+                    <option value="11 years">11 years</option>
+                    <option value="12 years">12 years</option>
+
+                </select>
+                <p style="color: bisque;font-size: 16px;">
+                    <b>Note:</b> Our loan rate is 20% interest per year.
+                </p>
+                <button id="loanCalculate">Calculate your loan</button>
+                <p id="display" style="text-align: center; color: yellow; font-size: 20px;"></p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Calculator of retirement
+
+        let departSituation = function () {
+            let birth = document.getElementById('birth').value;
+            let currentYear = new Date().getFullYear();
+            let retirementTime = birth - currentYear;
+            let leftYear = retirementTime - 65;
+
+            if (!birth || !leftYear) {
+                return '❌ please enter the valid number'
+            }
+            else if (leftYear > 1) {
+                return `you will retire ${retirementTime} years . your retirement remains ${leftYear} years`;
+            }
+            else if (leftYear === 0) {
+                `you are retiring in this year`;
+            }
+            else if (leftYear === -1) {
+                `You ought to have retired last year`;
+            }
+            else {
+                return `You ought to have retired ${65 - retirementTime} years ago`
+            }
+
+            let myBtn = document.getElementById('calculate');
+            myBtn = addEventListener('click', departSituation);
+
+        }
+        // // function displayDepartSituation() {
+        // //     document.getElementById("retirement").innerHTML = departSituation();
+
+        // }
+
+
+        // Calculator of simple Maths
+
+        function add() {
+            let num1 = document.getElementById("cal1").value;
+            let num2 = document.getElementById("cal2").value;
+            let result = num1 + num2;
+            if (!num1 || !num2) {
+                return '❌please enter a number'
+            }
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '+';
+        }
+
+        function subst() {
+            let num1 = document.getElementById("cal1").value;
+            let num2 = document.getElementById("cal2").value;
+            let result = num1 - num2;
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '-';
+        }
+
+        function mult() {
+            let num1 = document.getElementById("cal1").value;
+            let num2 = document.getElementById("cal2").value;
+            let result = num1 * num2;
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '*';
+        }
+
+        function division() {
+            let num1 = document.getElementById("cal1").value;
+            let num2 = document.getElementById("cal2").value;
+            let result = num1 / num2;
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '/';
+        }
+
+        function modul() {
+            let num1 = document.getElementById("cal1").valu;
+            let num2 = document.getElementById("cal2").valu;
+            let result = num1 % num2;
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '%';
+        }
+
+        function exponent() {
+            let num1 = document.getElementById("cal1").value;
+            let num2 = document.getElementById("cal2").value;
+            let result = num1 ** num2;
+            document.getElementById('result').innerText = `Total= ${result}`;
+            addsymbole.innerText = '**';
+        }
+
+        // Calculator of investment rate
+
+        function investissementRate() {
+            let investissement = document.getElementById('investment').value;
+            let Duration = document.getElementById('timing').value;
+
+
+        }
+
+        // loan calculator
+
+        function loanCalculate() {
+            let investmentValue = document.getElementById('myrate').value;
+            let loanTime = document.getElementById('loanduration').value;
+            let loanRate = 0.2; // 20% interest rate
+
+            // Vérification of inputs
+            if (isNaN(investmentValue) || isNaN(loanTime) || investmentValue <= 0 || loanTime <= 0) {
+                document.getElementById('display').innerHTML = '❌ Please enter a valid number';
+                return;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

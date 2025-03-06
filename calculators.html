@@ -99,6 +99,8 @@
                             <li><a class="dropdown-item" href="variables.html">Variables</a></li>
                             <li><a class="dropdown-item" href="Keword.html"> Kewords </a></li>
                             <li><a class="dropdown-item" href="JS-display.html">JavaScript display</a></li>
+                            <li><a class="dropdown-item" href="displaye.html">JAge Calculator</a></li>
+                            <li><a class="dropdown-item" href="game.html">JAge Calculator</a></li>
 
                         </ul>
                     </li>
@@ -212,6 +214,7 @@
             let age = currentYear - birth;
             let retirementAge = 65;
             let leftYear = retirementAge - age;
+            // let result;
 
 
             //    condition
@@ -240,55 +243,77 @@
         // Calculator of simple Maths
 
         function add() {
-            let num1 = document.getElementById("cal1").value;
-            let num2 = document.getElementById("cal2").value;
+            let num1 = Number(document.getElementById("cal1").value);
+            let num2 = Number(document.getElementById("cal2").value);
             let result = num1 + num2;
+
             if (!num1 || !num2) {
-                return '❌please enter a number'
+                result = '❌please enter a number'
             }
             document.getElementById('result').innerText = `Total= ${result}`;
             addsymbole.innerText = '+';
         }
 
         function subst() {
-            let num1 = document.getElementById("cal1").value;
-            let num2 = document.getElementById("cal2").value;
+            let num1 = Number(document.getElementById("cal1").value);
+            let num2 = Number(document.getElementById("cal2").value);
             let result = num1 - num2;
+
+            if (!num1 || !num2) {
+                result = '❌please enter a number'
+            }
             document.getElementById('result').innerText = ` Total= ${result}`;
             addsymbole.innerText = '-';
         }
 
         function mult() {
-            let num1 = document.getElementById("cal1").value;
-            let num2 = document.getElementById("cal2").value;
+            let num1 = Number(document.getElementById("cal1").value);
+            let num2 = Number(document.getElementById("cal2").value);
             let result = num1 * num2;
+
+            if (!num1 || !num2) {
+                result = '❌please enter a number'
+            }
             document.getElementById('result').innerText = ` Total= ${result}`;
             addsymbole.innerText = '*';
         }
 
         function division() {
-            let num1 = document.getElementById("cal1").value;
-            let num2 = document.getElementById("cal2").value;
+            let num1 = Number(document.getElementById("cal1").value);
+            let num2 = Number(document.getElementById("cal2").value);
             let result = num1 / num2;
+
+            if (!num1 || !num2) {
+                result = '❌please enter a number'
+            }
             document.getElementById('result').innerText = ` Total= ${result}`;
             addsymbole.innerText = '/';
         }
 
         function modul() {
-            let num1 = document.getElementById("cal1").valu;
-            let num2 = document.getElementById("cal2").valu;
+            let num1 = Number(document.getElementById("cal1").valu) ;
+            let num2 = Number(document.getElementById("cal2").valu) ;
             let result = num1 % num2;
+
+            if (!num1 || !num2) {
+                result = '❌please enter a number'
+            }
             document.getElementById('result').innerText = ` Total= ${result}`;
             addsymbole.innerText = '%';
         }
 
         function exponent() {
-            let num1 = document.getElementById("cal1").value;
-            let num2 = document.getElementById("cal2").value;
+            let num1 = Number(document.getElementById("cal1").value);
+            let num2 = Number(document.getElementById("cal2").value);
             let result = num1 ** num2;
+
+            if (!num1 || !num2) {
+                result = '❌please enter a number'
+            }
             document.getElementById('result').innerText = `Total= ${result}`;
             addsymbole.innerText = '';
         }
+
         // ______________________________________________________________________________________________________________________________________________
         // Calculator of investment rate
 
@@ -296,16 +321,18 @@
             let investissement = Number(document.getElementById('investment').value);
             let Duration = Number(document.getElementById('myduration').value);
 
-            if (isNaN(investissement) || isNaN(Duration)) {
-                return 'please enter a valid  amount and duration'
-            };
+            let verify;
 
+            if (isNaN(investissement) || isNaN(Duration)) {
+                returnOnInvestment = 'please enter a valid  amount and duration'
+            };
 
             let montlyInterestRate = 0.20;
             let returnOnInvestment = investissement * (1 + montlyInterestRate * Duration);
 
-
             document.getElementById('rate').innerText = ` your return on investment is ${returnOnInvestment} Naira`;
+
+            // return
 
         };
         document.getElementById('calculateButton').addEventListener('click', investissementRate);
@@ -316,12 +343,16 @@
             let investmentValue = Number(document.getElementById('myrate').value);
             let loanTime = Number(document.getElementById('selectmonth').value);
             let loanRate = 0.25; // 25% interest rate
-            if (isNaN(investmentValue) || isNaN(loanTime)) {
-                return "Please enter a valid amount and time period.";
+            let verify;
+            if (!investmentValue || !loanTime || investmentValue == 0 || loanRate == 0) {
+                verify = "Please enter a valid amount and time period.";
             };
 
             let amountPaidBack = investmentValue * (1 + loanRate * loanTime);
-            document.getElementById('display').innerText = ` you owe  ${amountPaidBack} Naira`;
+            document.getElementById('display').innerText = verify;
+
+            // let resultFinal = document.getElementById('showResult');
+            //     resultFinal.addEventListener('click', loanCalculate);
         };
 
         document.getElementById('showResult').addEventListener('click', loanCalculate);

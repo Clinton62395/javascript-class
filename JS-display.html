@@ -106,37 +106,43 @@
 
 
 
-    <div class="display">
-        <h1>the Five ways to display JS Code</h1>
-        <ol>
-            <li> <b>console.log</b> <br>
-                The console.log method is used to display messages or variables in the browser's console, which you
-                can access through the developer tools (DevTools).
-            </li>
-            <li> <b>Alert Box:</b> <br>
-                The alert method displays a message in a modal dialog box, which must be dismissed by the user
-                before they can interact with the webpage again.
-            </li>
-            <li> <b>Document Write:</b><br>
-                The document.write method writes directly to the HTML document. However, it's not recommended for
-                modern web development because it can overwrite the entire document if used after the page has
-                loaded.
-            </li>
-            <li> <b>DOM Manipulation:</b><br>
-                By selecting an element in the HTML document using methods like getElementById, you can change its
-                content using the innerHTML property.
-            </li>
-            <li> <b>Browser Console in HTML:</b> <br>
-                You can also display JavaScript output in the browser's console by linking a function to an event,
-                such as onload in the "body" tag.
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="text-primary">Five Ways to Display JavaScript Code</h1>
+        </div>
 
-                <p>Each method is useful in different contexts, so it's great to know various ways to display or
-                    debug JavaScript code!</p>
-            </li>
-        </ol>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="card p-4 shadow-sm mt-4">
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <b>console.log:</b>  
+                            The <code>console.log()</code> method is used to display messages or variables in the browser's console, accessible via Developer Tools (DevTools).
+                        </li>
+                        <li class="list-group-item">
+                            <b>Alert Box:</b>  
+                            The <code>alert()</code> method shows a message in a modal dialog box, requiring user action before proceeding.
+                        </li>
+                        <li class="list-group-item">
+                            <b>Document Write:</b>  
+                            The <code>document.write()</code> method writes directly to the HTML document. However, it’s not recommended for modern web development as it can overwrite the entire page.
+                        </li>
+                        <li class="list-group-item">
+                            <b>DOM Manipulation:</b>  
+                            You can modify an element’s content using JavaScript by selecting it with <code>getElementById()</code> and updating its <code>innerHTML</code>.
+                        </li>
+                        <li class="list-group-item">
+                            <b>Browser Console in HTML:</b>  
+                            JavaScript output can also be displayed in the browser’s console by linking a function to an event, such as <code>onload</code> in the <code>&lt;body&gt;</code> tag.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

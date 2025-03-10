@@ -113,22 +113,22 @@
 
             if (!player || player < 1 || player > 20) {
                 result = "⚠️Enter a number between 1 and 20 !";
-                document.body.style.backgroundColor = "red"; 
+                document.body.style.background = "red"; 
                 document.body.style.color = "black"; 
             } 
             else if (player < secretNumber) {
                 result = "📉 Too low ! Tri again.";
-                document.body.style.backgroundColor = "black"; 
+                document.body.style.background = "black"; 
                 document.body.style.color = "red"; 
             } 
             else if (player > secretNumber) {
                 result = "📈 Too high ! Tri again.";
-                document.body.style.backgroundColor = "yellow"; 
+                document.body.style.background = "yellow"; 
                 document.body.style.color = "purple"; 
             } 
             else {
                 result = `🎉 Congratulations ! you find it at ${attempts} attempts.`;
-                document.body.style.backgroundColor = "green"; 
+                document.body.style.background = "green"; 
                 document.body.style.color = "white"; 
             }
 

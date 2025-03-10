@@ -7,7 +7,7 @@
     <title>My Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-          body {
+        body {
             font-family: "Times New Roman", Times, serif;
             box-sizing: border-box;
             background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
@@ -30,9 +30,9 @@
 </head>
 
 <body>
-      <!-- My navbar for my differents pages -->
+    <!-- My navbar for my differents pages -->
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
         <div class="container-fluid">
 
             <!-- Bouton pour mobile -->
@@ -77,65 +77,67 @@
             </div>
         </div>
     </nav>
-   
-            <!-- containers -->
-             
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <h1 class="text-primary">🎯 Guess My Number Game</h1>
-                        <p class="lead">Enter a number between <b>1 and 100</b></p>
-        
-                        <input type="number" class="form-control text-center my-3" id="mygame" placeholder="Enter a number">
-                        <button class="btn btn-success w-100" id="mybutton">Check</button>
-        
-                        <h3 class="mt-4 text-info" id="showresult">Guess high score: <span id="score">0</span></h3>
-                        <p class="fw-bold mt-3" id="message"></p>
-                    </div>
-                </div>
+
+    <!-- containers -->
+
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-10 text-center border border-5 p-4 shadow-lg rounded">
+                <h1 class="text-warning pb-3">🎯 Guess My Number Game</h1>
+                <p class="lead">Enter a number between <b>1 and 20</b></p>
+    
+                <input type="number" class="form-control text-center mx-auto w-75 p-3" id="mygame" placeholder="Enter a number">
+                <button class="btn btn-outline-success w-75 mt-3" id="mybutton">Check</button>
+    
+                <h3 class="mt-4 text-danger" id="showresult">Guess high score: <span id="score">0</span></h3>
+                <p class="fw-bold mt-3" id="message"></p>                   
+               
             </div>
-        
+        </div>
+    </div>
+    
+
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        
-        let userPlayer = function(){
-        let player = document.getElementById('mygame').value;
-        let secretNumber = Math.trunc((Math.random() * 20) + 1);
-        let playerScore= player + ' ' + secretNumber;
-        let result;
-        if(!player || player>20){
-            result= ''
+
+
+        function userPlayer() {
+            let player = Number(document.getElementById('mygame').value);
+
+            let secretNumber = Math.trunc(Math.random() * 20) + 1;
+            let attempts = 0; 
+            let result ;
+
+            attempts++;
+
+            if (!player || player < 1 || player > 20) {
+                result = "⚠️Enter a number between 1 and 20 !";
+                document.body.style.backgroundColor = "red"; 
+                document.body.style.color = "black"; 
+            } 
+            else if (player < secretNumber) {
+                result = "📉 Too low ! Tri again.";
+                document.body.style.backgroundColor = "black"; 
+                document.body.style.color = "red"; 
+            } 
+            else if (player > secretNumber) {
+                result = "📈 Too high ! Tri again.";
+                document.body.style.backgroundColor = "yellow"; 
+                document.body.style.color = "purple"; 
+            } 
+            else {
+                result = `🎉 Congratulations ! you find it at ${attempts} attempts.`;
+                document.body.style.backgroundColor = "green"; 
+                document.body.style.color = "white"; 
+            }
+
+            document.getElementById('showresult').innerHTML = result;
+            document.getElementById('score').innerHTML = attempts;
         }
 
-
-        else if (player <=5 ){
-            result = 'the number is too low';
-            document.querySelector('body').style.background= 'red';
-            document.querySelector('body').style.color = 'black';
-        }
-
-        else if (player >=18 ){
-            result = 'the number is too height';
-            document.querySelector('body').style.background = 'yellow';
-            document.querySelector('body').style.color = 'red';
-        }
-
-        else if (player ==10 ){
-            result = 'Congratulations you have successfully won the game!';
-            document.querySelector('body').style.background = 'green';
-            document.querySelector('body').style.color = 'purple';
-        }
-        else{
-            result = ' Desole, you have failed the game'
-
-        }
-        document.getElementById('showresult').innerHTML = result;
-        
-    }
-    document.getElementById('mybutton').addEventListener('click', userPlayer);
-
-    </script>
+        document.getElementById('mybutton').addEventListener('click', userPlayer);
+    </script
 </body>
 
 </html>

@@ -214,23 +214,24 @@
             let age = currentYear - birth;
             let retirementAge = 65;
             let leftYear = retirementAge - age;
-            // let result;
+            let result;
 
 
             //    condition
+
             if (leftYear > 1) {
-                return document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
+                result= document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
             }
             else if (leftYear === 0) {
-                return document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
+                result= document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
 
             }
             else if (leftYear === -1) {
-                return document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
+                result= document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
 
             }
             else {
-                return document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
+                result= document.getElementById('retirement').innerText = `you have ${leftYear} years to retire`;
 
             };
 

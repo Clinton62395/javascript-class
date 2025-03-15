@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator by using LOOP WHILE</title>
+</head>
+
+<body>
+    <!-- Simple calculator -->
+    <div class="col col-md-4 col-lg-3 bg-success">
+        <h2>Simple Calculator</h2>
+        <input name="simple-calculator" placeholder="enter your figure" id="cal1"><br><br>
+        <p id="addsymbole" style="text-align: center; color: yellow; font-size: 20px;"></p>
+        <input name="simple-calculator" placeholder="enter your figure" id="cal2"><br>
+
+        <button value="add">+</button>
+        <button value="subst">-</button>
+        <button value="mult">*</button>
+        <button value="division">/</button>
+        <button value="modul">%</button>
+        <button value="exponent">**</button><br>
+        <p id="result" style="text-align: center; color: yellow; font-size: 20px;"></p>
+    </div>
+
+    <script>
+
+        // SIMPLE CALCULATOR
+
+        //     
+
+
+
+        //      mybutton = document.querySelectorAll('button');
+
+        //     for(let i=0; i < mybutton.length; i++ ){
+
+        //     mybutton[i].addEventListener("click", function (){ 
+        //         let num1 = Number(document.getElementById("cal1").value);
+        //         let num2 = Number(document.getElementById("cal2").value);
+        //         let result;
+        //         let mySymbol = document.getElementById("addsymbole");
+
+        //         if (!num1 || !num2) {
+        //             result = '❌please enter a number'
+        //         }
+        //         else if (mybutton[i].value == "add") {
+        //             result = num1 + num2;
+        //             mySymbol.innerText = '+';
+        //         } 
+        //         else if (mybutton[i].value =="subst"){
+        //             result = num1 - num2;
+        //             mySymbol.innerText = '-';
+        //         }
+        //         else if (mybutton[i].value =="mult"){
+        //             result = num1 * num2;
+        //             mySymbol.innerText = '*';
+        //         }
+        //         else if (mybutton[i].value =="division"){
+        //             result = num1 / num2;
+        //             mySymbol.innerText = '/';
+        //         }
+        //         else if (mybutton[i].value =="modul"){
+        //             result = num1 % num2;
+        //             mySymbol.innerText = '%';
+        //         }
+        //         else if (mybutton[i].value =="exponent"){
+        //             result = num1 ** num2;
+        //             mySymbol.innerText = '**';
+        //         }   
+        //         document.getElementById('result').innerText = ` Total= ${result}`;
+
+        //     }
+        // )
+        //     }
+
+
+        mybutton = document.querySelectorAll('button');
+        let i = 0;
+        while (i < mybutton.length) {
+
+            mybutton[i].addEventListener("click", function () {
+                let num1 = Number(document.getElementById("cal1").value);
+                let num2 = Number(document.getElementById("cal2").value);
+                let result;
+                let mySymbol = document.getElementById("addsymbole");
+
+                if (!num1 || !num2) {
+                    result = '❌please enter a number' 
+                    
+                }
+                else if (mybutton[i].value == "add") {
+                    console.log(i)
+                    result = num1 + num2;
+                    mySymbol.innerText = '+';
+                }
+                else if (mybutton[i].value == "subst") {
+                    result = num1 - num2;
+                    mySymbol.innerText = '-';
+                }
+                else if (mybutton[i].value == "mult") {
+                    result = num1 * num2;
+                    mySymbol.innerText = '*';
+                }
+                else if (mybutton[i].value == "division") {
+                    result = num1 / num2;
+                    mySymbol.innerText = '/';
+                }
+                else if (mybutton[i].value == "modul") {
+                    result = num1 % num2;
+                    mySymbol.innerText = '%';
+                }
+                else if (mybutton[i].value == "exponent") {
+                    result = num1 ** num2;
+                    mySymbol.innerText = '**';
+                }
+                document.getElementById('result').innerText = ` Total= ${result}`;
+
+            })
+            i++
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

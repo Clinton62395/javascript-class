@@ -12,7 +12,6 @@
             box-sizing: border-box;
             background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
             background-size: cover;
-            z-index: -1;
             animation: animation 15s linear infinite alternate;
         }
 
@@ -26,26 +25,20 @@
             }
         }
     </style>
-
 </head>
 
 <body>
-    <!-- My navbar for my differents pages -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
         <div class="container-fluid">
-
-            <!-- Bouton pour mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Contenu de la navbar -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" aria-current="page" href="index.html">
+                        <a class="nav-link active text-primary fs-3 fw-bold" href="index.html">
                             Introduction to JavaScript
                         </a>
                     </li>
@@ -57,20 +50,17 @@
                             Calculators
                         </a>
                     </li>
-
-                    <!-- Dropdown -->
                     <li class="nav-item dropdown m-3">
                         <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdown">
                             Learn more
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="variables.html">Variables</a></li>
-                            <li><a class="dropdown-item" href="Keword.html"> Kewords </a></li>
+                            <li><a class="dropdown-item" href="Keword.html">Keywords</a></li>
                             <li><a class="dropdown-item" href="JS-display.html">JavaScript display</a></li>
-                            <li><a class="dropdown-item" href="displaye.html">JAge Calculator</a></li>
-                            <li><a class="dropdown-item" href="game.html">Play to Game</a></li>
-
+                            <li><a class="dropdown-item" href="displaye.html">Age Calculator</a></li>
+                            <li><a class="dropdown-item" href="game.html">Play Game</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -78,66 +68,103 @@
         </div>
     </nav>
 
-    <!-- containers -->
-
     <div class="container-fluid mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-10 text-center border border-5 p-4 shadow-lg rounded">
                 <h1 class="text-warning pb-3">🎯 Guess My Number Game</h1>
-                <p class="lead">Enter a number between <b>1 and 20</b></p>
-    
-                <input type="number" class="form-control text-center mx-auto w-75 p-3" id="mygame" placeholder="Enter a number">
-                <button class="btn btn-outline-success w-75 mt-3" id="mybutton">Check</button>
-    
-                <h3 class="mt-4 text-danger" id="showresult">Guess high score: <span id="score">0</span></h3>
-                <p class="fw-bold mt-3" id="message"></p>                   
-               
+                <p class="lead">Enter a number between <b>30 and 50</b></p>
+
+                <input type="number" class="form-control text-center mx-auto w-75 p-3" id="mygame"
+                    placeholder="Guess a number...">
+
+                <button class="btn btn-outline-success w-75 mt-3" id="checkButton">Check</button>
+                <button class="btn btn-danger rounded-5 w-25 mx-auto mt-3" id="playAgain" style="display: none;">Try Again</button>
+
+                <h3 class="text-warning pb-3 currentscore" style="display: none;" >current score:o</h3>
+                <h2 id="DisplayedScore"></h2>
+                <h1 class="text-warning pb-3" id="highestScore" style="display: none;">🎯 Highest Score: 0</h1>
             </div>
         </div>
     </div>
-    
 
-    <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 
+        let secretNumber = Math.trunc(Math.random() * 21) + 30;
+        let score = 50;
+        let highestScore = 0;
 
-        function userPlayer() {
+        document.getElementById('checkButton').addEventListener('click', function () {
             let player = Number(document.getElementById('mygame').value);
+            let message ;
+            score -= 10;
+            document.getElementById('mygame').value = "";
 
-            let secretNumber = Math.trunc(Math.random() * 20) + 1;
-            let attempts = 0; 
-            let result ;
 
-            attempts++;
+            if (!player || player < 30 || player > 50) {
+                message = "⚠️ Please enter a number between 30 and 50!";
+                score -= 10;
+                document.getElementById('DisplayedScore').style.color = 'red';
+                document.getElementById('mygame').value = "";
 
-            if (!player || player < 1 || player > 20) {
-                result = "⚠️Enter a number between 1 and 20 !";
-                document.body.style.background = "red"; 
-                document.body.style.color = "black"; 
+
             } 
             else if (player < secretNumber) {
-                result = "📉 Too low ! Tri again.";
-                document.body.style.background = "black"; 
-                document.body.style.color = "red"; 
+                message = "📉 Too low! Try again.";
+                document.getElementById('DisplayedScore').style.color = 'red';
+                score -= 10;
+                document.getElementById('mygame').value = "";
+
             } 
             else if (player > secretNumber) {
-                result = "📈 Too high ! Tri again.";
-                document.body.style.background = "yellow"; 
-                document.body.style.color = "purple"; 
+                message = "📈 Too high! Try again.";
+                document.getElementById('DisplayedScore').style.color = 'red';
+                score -= 10;
+                document.getElementById('mygame').value = "";
+
             } 
             else {
-                result = `🎉 Congratulations ! you find it at ${attempts} attempts.`;
-                document.body.style.background = "green"; 
-                document.body.style.color = "white"; 
+                message = `🎉 Congratulations! You found it.`;
+                document.body.style.background = "green";
+                document.body.style.color ='white';
+                document.getElementById('checkButton').disabled = true;
+                document.getElementById('playAgain').style.display = "block";
+
+                if (score > highestScore) {
+                    highestScore = score;
+                    document.getElementById('highestScore').textContent = `🎯 Highest Score: ${highestScore}`;
+                    document.getElementById('highestScore').style.display = "block";
+                    document.querySelector('.currentscore').style.display = 'block';
+                    document.querySelector('.currentscore').textContent = `Current Score: ${score}`;
+                }
             }
 
-            document.getElementById('showresult').innerHTML = result;
-            document.getElementById('score').innerHTML = attempts;
-        }
+            if (score <= 0) {
+                message = '❌ Game Over! You have used all your chances.';
+                document.body.style.background = "black";
+                document.getElementById('checkButton').style.display="none";
+                document.getElementById('playAgain').style.display = "block";
+                document.querySelector('.lead').style.color='yellow';
+                document.getElementById('playAgain').insertAdjacentHTML("afterend", "<p style='color: white;'>Good luck, you are about to find it.</p>");
+            }
 
-        document.getElementById('mybutton').addEventListener('click', userPlayer);
-    </script
+            document.getElementById('DisplayedScore').textContent = message;
+        });
+
+        document.getElementById('playAgain').addEventListener('click', () => {
+            secretNumber = Math.trunc(Math.random() * 21) + 30;
+            score = 50;
+            document.getElementById('mygame').value ;
+            document.getElementById('DisplayedScore').textContent = 'Start guessing...';
+            document.getElementById('DisplayedScore').style.color = 'black';
+            document.body.style.background = 'white';
+            document.body.style.color = 'black';
+            document.getElementById('checkButton').style.display = 'block';
+            document.getElementById('playAgain').style.display = "none";
+
+        });
+
+    </script>
 </body>
 
 </html>

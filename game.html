@@ -83,9 +83,10 @@
                     placeholder="Guess a number...">
 
                 <button class="btn btn-outline-success w-75 mt-3" id="checkButton">Check</button>
-                <button class="btn btn-danger rounded-5 w-25 mx-auto mt-3" id="playAgain" style="display: none;">Try Again</button>
+                <button class="btn btn-danger rounded-5 w-25 mx-auto mt-3" id="playAgain" style="display: none;">Try
+                    Again</button>
 
-                <h3 class="text-warning pb-3 currentscore" style="display: none;" >current score:o</h3>
+                <h3 class="text-warning pb-3 currentscore" style="display: none;">current score:o</h3>
                 <h2 id="DisplayedScore"></h2>
                 <h1 class="text-warning pb-3" id="highestScore" style="display: none;">🎯 Highest Score: 0</h1>
             </div>
@@ -101,7 +102,7 @@
 
         document.getElementById('checkButton').addEventListener('click', function () {
             let player = Number(document.getElementById('mygame').value);
-            let message ;
+            let message;
             score -= 10;
             document.getElementById('mygame').value = "";
 
@@ -113,27 +114,27 @@
                 document.getElementById('mygame').value = "";
 
 
-            } 
+            }
             else if (player < secretNumber) {
                 message = "📉 Too low! Try again.";
                 document.getElementById('DisplayedScore').style.color = 'red';
                 score -= 10;
                 document.getElementById('mygame').value = "";
 
-            } 
+            }
             else if (player > secretNumber) {
                 message = "📈 Too high! Try again.";
                 document.getElementById('DisplayedScore').style.color = 'red';
                 score -= 10;
                 document.getElementById('mygame').value = "";
 
-            } 
+            }
             else {
                 message = `🎉 Congratulations! You found it.`;
                 document.body.style.background = "green";
-                document.body.style.color ='white';
-                document.getElementById('checkButton').disabled = true;
-                document.getElementById('playAgain').style.display = "block";
+                document.body.style.color = 'white';
+                document.getElementById('checkButton').style.display = 'none';
+                document.getElementById('playAgain').style.display = 'block';
 
                 if (score > highestScore) {
                     highestScore = score;
@@ -147,10 +148,9 @@
             if (score <= 0) {
                 message = '❌ Game Over! You have used all your chances.';
                 document.body.style.background = "black";
-                document.getElementById('checkButton').style.display="none";
+                document.getElementById('checkButton').style.display = "none";
                 document.getElementById('playAgain').style.display = "block";
-                document.querySelector('.lead').style.color='yellow';
-                document.getElementById('playAgain').insertAdjacentHTML("afterend", "<p style='color: white;'>Good luck, you are about to find it.</p>");
+                document.querySelector('.lead').style.color = 'yellow';
             }
 
             document.getElementById('DisplayedScore').textContent = message;
@@ -159,7 +159,7 @@
         document.getElementById('playAgain').addEventListener('click', () => {
             secretNumber = Math.trunc(Math.random() * 21) + 30;
             score = 50;
-            document.getElementById('mygame').value ;
+            document.getElementById('mygame').value;
             document.getElementById('DisplayedScore').textContent = 'Start guessing...';
             document.getElementById('DisplayedScore').style.color = 'black';
             document.body.style.background = 'white';

@@ -210,6 +210,23 @@
             console.log(n);
             n++;
         } while (n <= 5);
+// secrenumber do while
+
+        let secretNumber = Math.floor(Math.random() * 10) + 1; // Nombre entre 1 et 10
+let guess;
+
+do {
+    guess = parseInt(prompt("Devinez un nombre entre 1 et 10 : "), 10);
+
+    if (guess < secretNumber) {
+        alert("Trop petit ! Essayez encore.");
+    } else if (guess > secretNumber) {
+        alert("Trop grand ! Essayez encore.");
+    }
+} while (guess !== secretNumber);
+
+alert(`🎉 Bravo ! Vous avez trouvé le bon nombre : ${secretNumber}`);
+
 
         
 

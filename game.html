@@ -97,19 +97,20 @@
     <script>
 
         let secretNumber = Math.trunc(Math.random() * 21) + 30;
+        console.log(secretNumber);
         let score = 50;
         let highestScore = 0;
 
         document.getElementById('checkButton').addEventListener('click', function () {
             let player = Number(document.getElementById('mygame').value);
             let message;
-            score -= 10;
+            score -= 4;
             document.getElementById('mygame').value = "";
 
 
             if (!player || player < 30 || player > 50) {
                 message = "⚠️ Please enter a number between 30 and 50!";
-                score -= 10;
+                score -= 4;
                 document.getElementById('DisplayedScore').style.color = 'red';
                 document.getElementById('mygame').value = "";
 
@@ -118,14 +119,14 @@
             else if (player < secretNumber) {
                 message = "📉 Too low! Try again.";
                 document.getElementById('DisplayedScore').style.color = 'red';
-                score -= 10;
+                score -= 4;
                 document.getElementById('mygame').value = "";
 
             }
             else if (player > secretNumber) {
                 message = "📈 Too high! Try again.";
                 document.getElementById('DisplayedScore').style.color = 'red';
-                score -= 10;
+                score -= 4;
                 document.getElementById('mygame').value = "";
 
             }
@@ -158,8 +159,9 @@
 
         document.getElementById('playAgain').addEventListener('click', () => {
             secretNumber = Math.trunc(Math.random() * 21) + 30;
+            document.querySelector('.currentscore').style.display = 'none';
             score = 50;
-            document.getElementById('mygame').value;
+            document.getElementById('mygame').value = '';
             document.getElementById('DisplayedScore').textContent = 'Start guessing...';
             document.getElementById('DisplayedScore').style.color = 'black';
             document.body.style.background = 'white';
@@ -167,6 +169,10 @@
             document.getElementById('checkButton').style.display = 'block';
             document.getElementById('playAgain').style.display = "none";
 
+            // turn back to initial styles
+            document.body.style.backgroundImage = 'url(https://www.codenameone.com/img/blog/css-header.jpg)';
+            document.body.style.backgroundSize = "cover";
+            document.body.style.color = 'black';
         });
 
     </script>

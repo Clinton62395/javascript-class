@@ -10,10 +10,26 @@
     />
   </head>
   <style>
+      .navbar ul li a{
+        transition: all 0.5s ease-in-out;
+        color: rgb(9, 9, 9) !important;
+    }
+    .navbar ul li a:hover{
+        border-bottom: 2px ridge tomato;
+        font-weight: bold;
+        color: tomato !important;
+        transform: scale(1.1);
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+
     body {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         height: 100vh;
       }
@@ -120,16 +136,15 @@
 
             <!-- Dropdown -->
             <li class="nav-item dropdown">
-              <a
+              <button
                 class="nav-link dropdown-toggle text-dark fw-semibold"
                 href="#"
-                role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 <i class="bi bi-lightbulb-fill me-1"></i>Learn More
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-3">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-center overflow-x-hidden shadow-sm rounded-3">
                 <li>
                   <a class="dropdown-item" href="variables.html"
                     ><i class="bi bi-box me-2"></i>Variables</a

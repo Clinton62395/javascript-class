@@ -1,181 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Game</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            box-sizing: border-box;
-            background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
-            background-size: cover;
-            animation: animation 15s linear infinite alternate;
+      body {
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
+        background-size: cover;
+        animation: animation 15s linear infinite alternate;
+      }
+
+      @keyframes animation {
+        from {
+          background-position: 0 0;
         }
 
-        @keyframes animation {
-            from {
-                background-position: 0 0;
-            }
-
-            to {
-                background-position: -100% 0;
-            }
+        to {
+          background-position: -100% 0;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-white shadow-sm rounded-bottom sticky-top"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold fs-4 text-primary" href="index.html">
+          <i class="bi bi-journal-code me-2"></i>JavaScript Projects
+        </a>
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="index.html">
-                            Introduction to JavaScript
-                        </a>
-                    </li>
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="About-Me.html">About Me</a>
-                    </li>
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="calculators.html">
-                            Calculators
-                        </a>
-                    </li>
-                    <li class="nav-item m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold" href="loop-calculator.html">
-                            Calcuulator by using Loop <b>WHILE</b>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown m-3">
-                        <a class="nav-link active text-primary fs-3 fw-bold dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">
-                            Learn more
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="variables.html">Variables</a></li>
-                            <li><a class="dropdown-item" href="Keword.html">Keywords</a></li>
-                            <li><a class="dropdown-item" href="JS-display.html">JavaScript display</a></li>
-                            <li><a class="dropdown-item" href="displaye.html">Age Calculator</a></li>
-                            <li><a class="dropdown-item" href="game.html">Play Game</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav gap-2 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="About-Me.html">
+                <i class="bi bi-person-fill me-1"></i>About Me
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="calculators.html">
+                <i class="bi bi-calculator-fill me-1"></i>Calculators
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark fw-semibold"
+                href="loop-calculator.html"
+              >
+                <i class="bi bi-arrow-clockwise me-1"></i>Loop Calculator
+                (WHILE)
+              </a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-dark fw-semibold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-lightbulb-fill me-1"></i>Learn More
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-3">
+                <li>
+                  <a class="dropdown-item" href="variables.html"
+                    ><i class="bi bi-box me-2"></i>Variables</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Keword.html"
+                    ><i class="bi bi-key me-2"></i>Keywords</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="JS-display.html"
+                    ><i class="bi bi-display me-2"></i>JS Display</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="displaye.html"
+                    ><i class="bi bi-calendar-event me-2"></i>Age Calculator</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="game.html"
+                    ><i class="bi bi-controller me-2"></i>Play Game</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="container-fluid mt-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-10 text-center border border-5 p-4 shadow-lg rounded">
-                <h1 class="text-warning pb-3">🎯 Guess My Number Game</h1>
-                <p class="lead">Enter a number between <b>30 and 50</b></p>
+      <div class="row justify-content-center">
+        <div
+          class="col-lg-4 col-md-6 col-10 text-center border border-5 p-4 shadow-lg rounded"
+        >
+          <h1 class="text-warning pb-3">🎯 Guess My Number Game</h1>
+          <p class="lead">Enter a number between <b>30 and 50</b></p>
 
-                <input type="number" class="form-control text-center mx-auto w-75 p-3" id="mygame"
-                    placeholder="Guess a number...">
+          <input
+            type="number"
+            class="form-control text-center mx-auto w-75 p-3"
+            id="mygame"
+            placeholder="Guess a number..."
+          />
 
-                <button class="btn btn-outline-success w-75 mt-3" id="checkButton">Check</button>
-                <button class="btn btn-danger rounded-5 w-25 mx-auto mt-3" id="playAgain" style="display: none;">Try
-                    Again</button>
+          <button class="btn btn-outline-success w-75 mt-3" id="checkButton">
+            Check
+          </button>
+          <button
+            class="btn btn-danger rounded-5 w-25 mx-auto mt-3"
+            id="playAgain"
+            style="display: none"
+          >
+            Try Again
+          </button>
 
-                <h3 class="text-warning pb-3 currentscore" style="display: none;">current score:o</h3>
-                <h2 id="DisplayedScore"></h2>
-                <h1 class="text-warning pb-3" id="highestScore" style="display: none;">🎯 Highest Score: 0</h1>
-            </div>
+          <h3 class="text-warning pb-3 currentscore" style="display: none">
+            current score:o
+          </h3>
+          <h2 id="DisplayedScore"></h2>
+          <h1 class="text-warning pb-3" id="highestScore" style="display: none">
+            🎯 Highest Score: 0
+          </h1>
         </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      let secretNumber = Math.trunc(Math.random() * 21) + 30;
+      console.log(secretNumber);
+      let score = 50;
+      let highestScore = 0;
 
-        let secretNumber = Math.trunc(Math.random() * 21) + 30;
-        console.log(secretNumber);
-        let score = 50;
-        let highestScore = 0;
+      document
+        .getElementById("checkButton")
+        .addEventListener("click", function () {
+          let player = Number(document.getElementById("mygame").value);
+          let message;
+          score -= 4;
+          document.getElementById("mygame").value = "";
 
-        document.getElementById('checkButton').addEventListener('click', function () {
-            let player = Number(document.getElementById('mygame').value);
-            let message;
+          if (!player || player < 30 || player > 50) {
+            message = "⚠️ Please enter a number between 30 and 50!";
             score -= 4;
-            document.getElementById('mygame').value = "";
+            document.getElementById("DisplayedScore").style.color = "red";
+            document.getElementById("mygame").value = "";
+          } else if (player < secretNumber) {
+            message = "📉 Too low! Try again.";
+            document.getElementById("DisplayedScore").style.color = "red";
+            score -= 4;
+            document.getElementById("mygame").value = "";
+          } else if (player > secretNumber) {
+            message = "📈 Too high! Try again.";
+            document.getElementById("DisplayedScore").style.color = "red";
+            score -= 4;
+            document.getElementById("mygame").value = "";
+          } else {
+            message = `🎉 Congratulations! You found it.`;
+            document.body.style.background = "green";
+            document.body.style.color = "white";
+            document.getElementById("checkButton").style.display = "none";
+            document.getElementById("playAgain").style.display = "block";
 
-
-            if (!player || player < 30 || player > 50) {
-                message = "⚠️ Please enter a number between 30 and 50!";
-                score -= 4;
-                document.getElementById('DisplayedScore').style.color = 'red';
-                document.getElementById('mygame').value = "";
-
-
+            if (score > highestScore) {
+              highestScore = score;
+              document.getElementById(
+                "highestScore"
+              ).textContent = `🎯 Highest Score: ${highestScore}`;
+              document.getElementById("highestScore").style.display = "block";
+              document.querySelector(".currentscore").style.display = "block";
+              document.querySelector(
+                ".currentscore"
+              ).textContent = `Current Score: ${score}`;
             }
-            else if (player < secretNumber) {
-                message = "📉 Too low! Try again.";
-                document.getElementById('DisplayedScore').style.color = 'red';
-                score -= 4;
-                document.getElementById('mygame').value = "";
+          }
 
-            }
-            else if (player > secretNumber) {
-                message = "📈 Too high! Try again.";
-                document.getElementById('DisplayedScore').style.color = 'red';
-                score -= 4;
-                document.getElementById('mygame').value = "";
+          if (score <= 0) {
+            message = "❌ Game Over! You have used all your chances.";
+            document.body.style.background = "black";
+            document.getElementById("checkButton").style.display = "none";
+            document.getElementById("playAgain").style.display = "block";
+            document.querySelector(".lead").style.color = "yellow";
+          }
 
-            }
-            else {
-                message = `🎉 Congratulations! You found it.`;
-                document.body.style.background = "green";
-                document.body.style.color = 'white';
-                document.getElementById('checkButton').style.display = 'none';
-                document.getElementById('playAgain').style.display = 'block';
-
-                if (score > highestScore) {
-                    highestScore = score;
-                    document.getElementById('highestScore').textContent = `🎯 Highest Score: ${highestScore}`;
-                    document.getElementById('highestScore').style.display = "block";
-                    document.querySelector('.currentscore').style.display = 'block';
-                    document.querySelector('.currentscore').textContent = `Current Score: ${score}`;
-                }
-            }
-
-            if (score <= 0) {
-                message = '❌ Game Over! You have used all your chances.';
-                document.body.style.background = "black";
-                document.getElementById('checkButton').style.display = "none";
-                document.getElementById('playAgain').style.display = "block";
-                document.querySelector('.lead').style.color = 'yellow';
-            }
-
-            document.getElementById('DisplayedScore').textContent = message;
+          document.getElementById("DisplayedScore").textContent = message;
         });
 
-        document.getElementById('playAgain').addEventListener('click', () => {
-            secretNumber = Math.trunc(Math.random() * 21) + 30;
-            document.querySelector('.currentscore').style.display = 'none';
-            score = 50;
-            document.getElementById('mygame').value = '';
-            document.getElementById('DisplayedScore').textContent = 'Start guessing...';
-            document.getElementById('DisplayedScore').style.color = 'black';
-            document.body.style.background = 'white';
-            document.body.style.color = 'black';
-            document.getElementById('checkButton').style.display = 'block';
-            document.getElementById('playAgain').style.display = "none";
+      document.getElementById("playAgain").addEventListener("click", () => {
+        secretNumber = Math.trunc(Math.random() * 21) + 30;
+        document.querySelector(".currentscore").style.display = "none";
+        score = 50;
+        document.getElementById("mygame").value = "";
+        document.getElementById("DisplayedScore").textContent =
+          "Start guessing...";
+        document.getElementById("DisplayedScore").style.color = "black";
+        document.body.style.background = "white";
+        document.body.style.color = "black";
+        document.getElementById("checkButton").style.display = "block";
+        document.getElementById("playAgain").style.display = "none";
 
-            // turn back to initial styles
-            document.body.style.backgroundImage = 'url(https://www.codenameone.com/img/blog/css-header.jpg)';
-            document.body.style.backgroundSize = "cover";
-            document.body.style.color = 'black';
-        });
-
+        // turn back to initial styles
+        document.body.style.backgroundImage =
+          "url(https://www.codenameone.com/img/blog/css-header.jpg)";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.color = "black";
+      });
     </script>
-</body>
-
+  </body>
 </html>

@@ -10,22 +10,28 @@
     />
     <style>
       body {
-        font-family: "Times New Roman", Times, serif;
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
-        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
-        background-size: cover;
-        z-index: -1;
-        animation: animation 15s linear infinite alternate;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
       }
 
-      @keyframes animation {
-        from {
-          background-position: 0 0;
-        }
-
-        to {
-          background-position: -100% 0;
-        }
+      body::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        background-repeat: no-repeat;
+        background-color: rgb(0, 0, 0, 0.9);
+        filter: brightness(30%);
+        animation: animation 15s linear infinite alternate;
       }
     </style>
   </head>
@@ -126,8 +132,10 @@
 
     <div class="container mt-5">
       <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
-          <h2 class="fw-bold text-primary">JavaScript Age Calculator</h2>
+        <div class="col-md-6 text-center  border border-2 border-warning rounded-5 shadow-lg">
+          <h2 class="fw-bold text-warning display-6">
+            JavaScript Age Calculator
+          </h2>
           <p class="text-muted">Enter your birth year to calculate your age</p>
 
           <div class="mb-3">
@@ -148,9 +156,20 @@
     <script>
       let onclik = function () {
         let mybirth = Number(document.getElementById("myage").value);
-        let = currentYear = new Date().getFullYear();
+        let currentYear = new Date().getFullYear();
+
+        if (!mybirth || mybirth > currentYear || mybirth < 1900) {
+          document.getElementById("age").innerText =
+            "Please enter a valid year of birth!";
+           mybirth = Number(document.getElementById("myage").value='');
+
+          return;
+        }
+
         let myage = currentYear - mybirth;
-        document.getElementById("age").innerText = `Your age is ${myage}`;
+        document.getElementById(
+          "age"
+        ).innerText = `Your age is ${myage} years old`;
       };
       document.getElementById("born").addEventListener("click", onclik);
 

@@ -9,23 +9,30 @@
 </head>
 <style>
     body {
-        font-family: "Times New Roman", Times, serif;
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
-        background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
-        background-size: cover;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+      }
+
+      body::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
         z-index: -1;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        background-repeat: no-repeat;
+        background-color: rgb(0, 0, 0, 0.9);
+        filter: brightness(30%);
         animation: animation 15s linear infinite alternate;
-    }
+      }
 
-    @keyframes animation {
-        from {
-            background-position: 0 0;
-        }
-
-        to {
-            background-position: -100% 0;
-        }
-    }
 
     .mycode {
         background-color: black;
@@ -138,7 +145,7 @@
             <i class="bi bi-lightbulb-fill me-1"></i>Learn More
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-3">
-            <li><a class="dropdown-item" href="variables.html"><i class="bi bi-box me-2"></i>Variables</a></li>
+            <!-- <li><a class="dropdown-item" href="variables.html"><i class="bi bi-box me-2"></i>Variables</a></li> -->
             <li><a class="dropdown-item" href="Keword.html"><i class="bi bi-key me-2"></i>Keywords</a></li>
             <li><a class="dropdown-item" href="JS-display.html"><i class="bi bi-display me-2"></i>JS Display</a></li>
             <li><a class="dropdown-item" href="displaye.html"><i class="bi bi-calendar-event me-2"></i>Age Calculator</a></li>
@@ -157,24 +164,24 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <h1 class="mb-4 text-primary">My Personal Information</h1>
-                    <p id="info" class="fs-5"></p>
-                    <button class="btn btn-primary btn-lg" onclick="clickMe()">Click to see more</button>
+                    <h1 class="mb-4 text-warning">My Personal Information</h1>
+                    <p id="info" class="fs-5" style="display: none;"></p>
+                    <button class="btn btn-primary text-white fw-bold btn-lg" id="btnInformation">Click to see more</button>
                 </div>
             </div>
 
             <div class="row mt-5">
                 <div class="col-md-10 offset-md-1">
-                    <h1 class="text-center text-success">Differentiation Between Logical and Comparison Operators</h1>
+                    <h3 class="text-center text-warning">Differentiation Between Logical and Comparison Operators</h3>
 
-                    <div class="mt-4">
+                    <div class="mt-4 text-light">
                         <h2 class="text-danger">Logical Operators</h2>
                         <p class="fs-5">Logical operators are used to combine multiple boolean expressions or
                             conditions.
                             They help in creating complex conditionals by combining multiple comparisons.</p>
                     </div>
 
-                    <div class="mt-3">
+                    <div class="mt-3 text-light">
                         <h2 class="text-warning">Comparison Operators</h2>
                         <p class="fs-5">Comparison operators are used to compare two values and determine their relative
                             order.
@@ -231,18 +238,39 @@
 
             console.log(informationAboutMySelf);
 
-            function clickMe() {
-                document.getElementById("info").innerHTML = `
+            // function clickMe() {
+             
+
+            // };
+            const btn= document.getElementById('btnInformation');
+            let isvisible= false;
+            const personaData=  document.getElementById("info");
+            btn .addEventListener('click', ()=>{
+            if(!isvisible){
+                personaData.style.display='block';
+               personaData.innerHTML = `
                 My name is:${informationAboutMySelf.Myfullname}. I can also be called: ${informationAboutMySelf.Nickname}.
                 I am: ${informationAboutMySelf.age} years old. I am from ${informationAboutMySelf.country}.
                 I can be contacted through: ${informationAboutMySelf.PhoneNumber} or by email at: ${informationAboutMySelf.Email}.
                 I am ${informationAboutMySelf.civilStatus}. Finally, I graduated with a ${informationAboutMySelf.academicLevel} degree.
             `;
-            };
-           let removeAll= document.getElementById('info');
-           removeAll.addEventListener('click', function(){
-               document.getElementById('info').innerText='';
-           })
+            btn.textContent='close info'
+            isvisible=true;
+            }else{
+            btn.innerText='close';
+              personaData.innerHTML='';
+            btn.textContent='Click to see info'
+            personaData.style.display='none'
+            isvisible=false;
+            }
+          
+            })
+         
+            
+        //    let removeAll= document.getElementById('info');
+        //    removeAll.addEventListener('click', function(){
+        //        document.getElementById('info').innerText='';
+        //    })
 
 
 

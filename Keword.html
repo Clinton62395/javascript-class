@@ -11,23 +11,29 @@
   </head>
   <style>
     body {
-      font-family: "Times New Roman", Times, serif;
-      box-sizing: border-box;
-      background-image: url(https://www.codenameone.com/img/blog/css-header.jpg);
-      background-size: cover;
-      z-index: -1;
-      animation: animation 15s linear infinite alternate;
-    }
-
-    @keyframes animation {
-      from {
-        background-position: 0 0;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
       }
 
-      to {
-        background-position: -100% 0;
+      body::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        background-repeat: no-repeat;
+        background-color: rgb(0, 0, 0, 0.9);
+        filter: brightness(30%);
+        animation: animation 15s linear infinite alternate;
       }
-    }
 
     h1 {
       background-color: black;

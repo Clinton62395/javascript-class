@@ -10,46 +10,46 @@
     />
   </head>
   <style>
-      .navbar ul li a{
-        transition: all 0.5s ease-in-out;
-        color: rgb(9, 9, 9) !important;
+    .navbar ul li a {
+      transition: all 0.5s ease-in-out;
+      color: rgb(9, 9, 9) !important;
     }
-    .navbar ul li a:hover{
-        border-bottom: 2px ridge tomato;
-        font-weight: bold;
-        color: tomato !important;
-        transform: scale(1.1);
+    .navbar ul li a:hover {
+      border-bottom: 2px ridge tomato;
+      font-weight: bold;
+      color: tomato !important;
+      transform: scale(1.1);
     }
 
-    .dropdown:hover .dropdown-menu{
-        display: block;
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
 
     body {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        height: 100vh;
-      }
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+    }
 
-      body::after {
-        content: "";
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
-        background-size: cover;
-        background-position: center;
-        position: fixed;
-        background-repeat: no-repeat;
-        background-color: rgb(0, 0, 0, 0.9);
-        filter: brightness(30%);
-        animation: animation 15s linear infinite alternate;
-      }
+    body::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      background-repeat: no-repeat;
+      background-color: rgb(0, 0, 0, 0.9);
+      filter: brightness(30%);
+      animation: animation 15s linear infinite alternate;
+    }
 
     h1 {
       color: yellow;
@@ -127,6 +127,15 @@
             <li class="nav-item">
               <a
                 class="nav-link text-dark fw-semibold"
+                href="hotel-accomodation.html"
+              >
+                <i class="bi bi-hospital"></i>Hotel Accomadation
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark fw-semibold"
                 href="loop-calculator.html"
               >
                 <i class="bi bi-arrow-clockwise me-1"></i>Loop Calculator
@@ -144,7 +153,9 @@
               >
                 <i class="bi bi-lightbulb-fill me-1"></i>Learn More
               </button>
-              <ul class="dropdown-menu dropdown-menu-center overflow-x-hidden shadow-sm rounded-3">
+              <ul
+                class="dropdown-menu dropdown-menu-center overflow-x-hidden shadow-sm rounded-3"
+              >
                 <li>
                   <a class="dropdown-item" href="variables.html"
                     ><i class="bi bi-box me-2"></i>Variables</a

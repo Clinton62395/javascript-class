@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Accomadation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar ul li a {
+        transition: all 0.5s ease-in-out;
+        color: rgb(9, 9, 9) !important;
+      }
+      .navbar ul li a:hover {
+        border-bottom: 2px ridge tomato;
+        font-weight: bold;
+        color: tomato !important;
+        transform: scale(1.1);
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+      }
+
+      body::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLkuswwgtI7H_3SMeQtXsO7bmCAEnz4CJZA&s");
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        background-repeat: no-repeat;
+        background-color: rgb(0, 0, 0, 0.9);
+        filter: brightness(30%);
+        animation: animation 15s linear infinite alternate;
+      }
+
+      .mycode {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px auto;
+        display: block;
+        width: fit-content;
+        padding: 20px 40px;
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-white shadow-sm rounded-bottom sticky-top"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold fs-4 text-primary" href="index.html">
+          <i class="bi bi-journal-code me-2"></i>JavaScript Projects
+        </a>
+
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav gap-2 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="About-Me.html">
+                <i class="bi bi-person-fill me-1"></i>About Me
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" href="calculators.html">
+                <i class="bi bi-calculator-fill me-1"></i>Calculators
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark fw-semibold"
+                href="hotel-accomodation.html"
+              >
+                <i class="bi bi-hospital"></i>Hotel Accomadation
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark fw-semibold"
+                href="loop-calculator.html"
+              >
+                <i class="bi bi-arrow-clockwise me-1"></i>Loop Calculator
+                (WHILE)
+              </a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <button
+                class="nav-link dropdown-toggle text-dark fw-semibold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-lightbulb-fill me-1"></i>Learn More
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-center shadow-sm rounded-3 overflow-x-hidden"
+              >
+                <li>
+                  <a class="dropdown-item" href="variables.html"
+                    ><i class="bi bi-box me-2"></i>Variables</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Keword.html"
+                    ><i class="bi bi-key me-2"></i>Keywords</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="JS-display.html"
+                    ><i class="bi bi-display me-2"></i>JS Display</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="displaye.html"
+                    ><i class="bi bi-calendar-event me-2"></i>Age Calculator</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="game.html"
+                    ><i class="bi bi-controller me-2"></i>Play Game</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!-- content -->
+
+
+
+
+    <div class="container py-5">
+      <!-- Étape 1 : Nom -->
+      <div class="mb-5 Welcome-div">
+        <h1 class="text-center text-warning mb-4 display-6 fw-bolder">
+          Welcome to our hotel service Accomadation
+        </h1>
+        <p class="text-center text-light display-5">Provide your name</p>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6 mt-5">
+            <div class="mb-4">
+              <label for="username" class="form-label text-light"
+                >First Name
+              </label>
+              <input
+                type="text"
+                class="form-control bg-transparent text-warning py-3"
+                id="username"
+              />
+              <span
+                id="nameError"
+                class="text-danger fw-bold small fw-bold"
+              ></span>
+            </div>
+
+            <div class="mb-3">
+              <label for="userlastname" class="form-label text-light"
+                >Last Name
+              </label>
+              <input
+                type="text"
+                class="form-control bg-transparent text-warning py-3"
+                id="userlastname"
+              />
+              <span id="lasnameError" class="text-danger fw-bold small"></span>
+            </div>
+
+            <div class="text-center mt-5">
+              <button id="btnNext" class="btn btn-primary px-5">Next</button>
+            </div>
+          </div>
+          <div class="col md-6">
+            <img
+              src="https://c8.alamy.com/comp/2E3NNW3/online-booking-person-using-laptop-for-hotel-search-and-reservation-2E3NNW3.jpg"
+              alt="image-room"
+              class="img-fluid rounded-4"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2 : Choix hébergement -->
+      <div id="accomodation" class="mb-5 accomodation" style="display: none">
+        <div
+          class="row justify-content-center align-items-center min-vh-100 text-center"
+        >
+          <div class="col-md-8 text-light">
+            <h3
+              id="usernameShown"
+              style="color: tomato; font-weight: bold"
+            ></h3>
+            <h2 class="text-warning fw-bold">Type of accommodation</h2>
+            <h2 id="accommodationMessage" class="text-info"></h2>
+
+            <div class="row mt-4">
+              <div class="col text-light">
+                <button
+                  id="freebtn"
+                  class="btn btn-outline-success w-100 py-4 fs-bold fs-3"
+                >
+                  Free accommodation
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  id="hotelbtn"
+                  class="btn btn-outline-primary w-100 py-4 fs-bold fs-3"
+                >
+                  Hotel accommodation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- if freebtn show this -->
+      <div
+        id="alternativeContent"
+        class="min-vh-100 text-center d-flex justify-content-center align-items-center d-none"
+      >
+        <div class="d-flex flex-column text-white">
+          <h2 class="fw-bold">
+            Dear customer, you have chosen free accommodation
+          </h2>
+          <span>We apologize for the inconvenience</span>
+          <p class="fs-4 lead">
+            Rest assured, we are doing our best to find an option that meets
+            your expectations.
+          </p>
+          <div class="mt-3">
+            <!-- Optional image -->
+            <!-- 
+      <img
+        src="https://blog.hotelogix.com/content/images/2024/09/google-hotel-finder.webp"
+        alt="Alternative accommodation"
+        class="img-fluid rounded-5"
+      />
+      -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3 : Choix date et chambre -->
+      <div id="room-type" class="" style="display: none">
+        <div
+          class="row justify-content-center align-items-center mx-auto"
+          style="height: 100vh"
+        >
+          <div class="col-md-6 text-light text-center">
+            <h3 id="showName" class="text-warning text-center"></h3>
+
+            <div class="mb-3 mt-5">
+              <h5 class="lead text-light fw-bold">
+                Choose the day you will be leaving
+              </h5>
+
+              <!-- inputs -->
+              <input type="date" class="form-control mb-2 py-3" id="date" />
+              <span id="errorMessage" class="text-danger fw-bold small"></span>
+            </div>
+
+            <div class="mb-3">
+              <h5 class="lead text-light fw-bold">
+                Please Choose dealine time
+              </h5>
+
+              <input type="date" class="form-control mb-2 py-3" id="endDate" />
+              <span id="endDateError" class="text-danger fw-bold small"></span>
+            </div>
+            <p class="mt-3 text-white lead fw-bold">Select room type</p>
+            <select
+              id="select"
+              class="form-select mb-3 py-3 text-light bg-dark"
+            >
+              <option value="0" selected hidden>0</option>
+              <option value="5000">Standard N5000</option>
+              <option value="15000">Emirald N15000</option>
+              <option value="25000">Supreme N25000</option>
+              <option value="40000">Presidential N40000</option>
+            </select>
+            <span id="selectError" class="text-danger fw-bold small"></span>
+
+            <div class="text-center">
+              <button id="confirmbtn" class="btn btn-success px-5 py-3">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4 : Message d'expiration -->
+      <div id="choice-btn" class="mb-5 d-none">
+        <div class="container">
+          <div
+            class="row d-flex gap-3 flex-column justify-content-center text-center align-items-center mx-auto min-vh-100"
+          >
+            <div class="col col-md-12 text-light text-center mb-3">
+              <p id="expiredMessage" class="text-danger fs-5 fw-bold"></p>
+              <div class="d-flex gap-5 text-center mx-auto">
+                <button id="backBtn" class="btn btn-danger me-2 px-5">
+                  Cancel
+                </button>
+                <button id="continuebtn" class="btn btn-primary px-5">
+                  Continue
+                </button>
+              </div>
+            </div>
+            <div class="col col-md-12 bg-secondary text-center mt-5">
+              <h3 class="display-5 fw-bold text-light">
+                your rent according the selected time
+              </h3>
+              <!-- result of accomodation rate -->
+              <h5 id="hotelprice"></h5>
+              <p class="text-muted fs-bold fs-4 text-white">
+                our rate per night is N5000
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5 : Timer -->
+      <div id="counting-div" class="text-center d-none">
+        <div class="row justify-content-center">
+          <div
+            class="col-md-6 text-light mx-auto min-vh-100"
+            style="
+              background-color: rgb(
+                rgba(109, 88, 88, 0.708),
+                rgba(97, 112, 97, 0.726),
+                rgba(1, 1, 11, 0.658)
+              );
+            "
+          >
+            <h2 class="display-4">Your rent expires in:</h2>
+            <h2 class="display-5 showTime">
+              <span id="hour ">00 :</span>
+              <span id="minute ">00 :</span>
+              <span id="second ">00 :</span>
+            </h2>
+            <p id="expiredTime" class="text-danger display-5 fw-bold"></p>
+            <button
+              id="startbtn"
+              class="btn btn-dark mt-3 text-success px-5 rounded-4"
+            >
+              Start
+            </button>
+            <button
+              id="stopBtn"
+              class="btn btn-dark mt-3 text-warning d-none px-5 rounded-4"
+            >
+              Stop counting
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootsrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- js -->
+    <script src="hotel-acomodation.js"></script>
+  </body>
+</html>

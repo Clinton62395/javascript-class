@@ -6,7 +6,6 @@ const lastNameInput = document.getElementById("userlastname");
 // input to uppercase
 firstNameInput.addEventListener("input", () => {
   firstNameInput.value = firstNameInput.value.toUpperCase();
-  console.log(toUpperCase);
 });
 lastNameInput.addEventListener("input", () => {
   lastNameInput.value = lastNameInput.value.toUpperCase();
@@ -30,7 +29,7 @@ nextBtn.addEventListener("click", function () {
   }
   if (firstName.length > 15 || firstName.length < 3) {
     nameError.textContent =
-      "first name can't be less than 3 words or greater than 15 words";
+      "first name can't be less than 3 characters or greater than 15 characters";
     return;
   }
   if (lastName === "") {
@@ -39,7 +38,7 @@ nextBtn.addEventListener("click", function () {
   }
   if (lastName.length > 15 || lastName.length < 3) {
     lastNameError.textContent =
-      "last name can't be less than 3 words or greater than 15 words";
+      "last name can't be less than 3 characters or greater than 15 characters";
     return;
   }
 
@@ -65,11 +64,17 @@ document.addEventListener("keydown", (e) => {
 
 const Cancelbtn = document.getElementById("freebtn");
 const accommodationBtn = document.getElementById("hotelbtn");
+const goBackBtn = document.querySelector(".bnt-back");
 Cancelbtn.addEventListener("click", () => {
   document.getElementById("accomodation").style.display = "none";
 
   const element = document.getElementById("alternativeContent");
   element.classList.remove("d-none");
+});
+goBackBtn.addEventListener("click", () => {
+  const element = document.getElementById("alternativeContent");
+  element.classList.add("d-none");
+  document.getElementById("accomodation").style.display = "block";
 });
 
 accommodationBtn.addEventListener("click", () => {
@@ -92,103 +97,180 @@ const error = document.getElementById("errorMessage");
 const endDateError = document.getElementById("endDateError");
 const selectError = document.getElementById("selectError");
 const totalDisplay = document.getElementById("hotelprice");
+const distance = document.getElementById("leftTime");
+const selectItemsDiv = document.getElementById("room-type");
 
+// global variable
+
+const newStartDate = "";
+const newEndDate = "";
 confirmBtn.addEventListener("click", () => {
-document.getElementById("choice-btn").classList.remove("d-none");
+  // initialise all errors messages span
   error.textContent = "";
   endDateError.textContent = "";
   totalDisplay.textContent = "";
   selectError.textContent = "";
 
-  const startDate = new Date(dateInput.value);
-  const endDate = new Date(endDateInput.value);
+  const startDateRaw = dateInput.value;
+  const endDateRaw = endDateInput.value;
   const pricePerDay = parseInt(roomSelect.value);
 
-  if (!dateInput.value) {
-    error.textContent = "⛔ Please choose a start date";
-    return;
-  }
-
-  if (!endDateInput.value) {
-    endDateError.textContent = "⛔ Please choose an end date";
-    return;
-  }
-
-  if (startDate > endDate) {
-    error.textContent = "⛔ Start date cannot be after end date";
-    return;
-  }
+  const selectedIndex = roomSelect.selectedIndex;
 
   if (isNaN(pricePerDay) || pricePerDay === 0) {
     selectError.textContent = "⛔ Please select a valid room type";
     return;
   }
 
+  if (!startDateRaw) {
+    error.textContent = "⛔ Please choose a start date";
+    return;
+  }
+
+  if (!endDateRaw) {
+    endDateError.textContent = "⛔ Please choose an end date";
+    return;
+  }
+
+  const startDate = new Date(startDateRaw);
+  const endDate = new Date(endDateRaw);
+
+  if (startDate > endDate) {
+    error.textContent = "⛔ Start date cannot be after end date";
+
+    return;
+  }
+
+  const roomTypeText = roomSelect.options[selectedIndex].text;
+
   const diffDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
   const total = diffDays * pricePerDay;
 
-  totalDisplay.innerHTML = `
-    🧾 Duration: <strong>${diffDays}</strong> day(s)<br>
+  totalDisplay.innerHTML = ` Room type: <strong>${roomTypeText}</strong>
+    🧾 Duration: <strong>${diffDays}</strong> day(s)
     💰 Total: <strong>N${total.toLocaleString()}</strong>
   `;
+  totalDisplay.style.marginLeft = "10%";
+  totalDisplay.style.marginTop = "20px";
+  //
+
+  // Seulement ici : afficher l’étape suivante
+  document.getElementById("choice-btn").classList.remove("d-none");
+  selectItemsDiv.style.display = "none";
 });
 
-// Étape 4 : Lancement du compte à rebours
-// const backBtn= document.getElementById("backBtn");
-// window.addEventListener("click", ()=>{
-//   backBtn.
-// })
 document.getElementById("backBtn").addEventListener("click", () => {
   location.reload(); // Recharge la page
 });
 
-const continuebtn = document.getElementById("continuebtn");
 continuebtn.addEventListener("click", () => {
+  // const now = new Date(); // maintenant
+  document.getElementById("choice-btn").classList.add("d-none");
   const countingDiv = document.getElementById("counting-div");
   countingDiv.classList.remove("d-none");
-  choiceBtn.classList.add("d-none");
+
+  const startDateRaw = dateInput.value;
+  const endDateRaw = endDateInput.value;
+
+  const newStartDate = new Date(startDateRaw);
+  const newEndDate = new Date(endDateRaw);
+
+  const timeLeft = newEndDate - newStartDate;
+
+  // Si expiré
+  if (timeLeft <= 0) {
+    document.getElementById("expiredTime").textContent =
+      "❌ Your rent has already expired!";
+  } else {
+    let day = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+    let seconds = Math.floor((timeLeft / 1000) % 60);
+
+    day = day < 10 ? "0" + day : day;
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById("day").textContent = `${day}d`;
+    document.getElementById("hour").textContent = `${hours}h`;
+    document.getElementById("minute").textContent = `${minutes}m`;
+    document.getElementById("second").textContent = `${seconds}s`;
+
+    document.getElementById("expiredTime").textContent = "";
+  }
 });
 
 const startCounting = document.getElementById("startbtn");
 const stopBtn = document.getElementById("stopBtn");
 let countinDown = "";
 startCounting.addEventListener("click", () => {
+  document.getElementById("expiredTime").style.display = "none";
+
   startCounting.style.display = "none";
   stopBtn.classList.remove("d-none");
+  const startDateRaw = dateInput.value;
+  const endDateRaw = endDateInput.value;
 
-  const targetTime = new Date(dateInput.value);
+  const now = new Date();
+  const newStartDate = new Date(startDateRaw);
+  const newEndDate = new Date(endDateRaw);
+
+  const timeLeft = newEndDate - now;
+
+  if (timeLeft <= 0) {
+    document.getElementById("expiredTime").style.display = "block";
+    document.getElementById("expiredTime").textContent =
+      "⏳ The rent has not started yet.";
+    stopBtn.classList.add("d-none");
+    startCounting.style.display = "block";
+    return;
+  }
+
   countinDown = setInterval(() => {
-    // const day= now.getDate();
-    // const hours= now.getHours();
-    // const minutes= now.getMinutes();
-    // const second= now.getSeconds();
-
     const now = new Date();
-    const leftTime = targetTime - now;
+    const endDate = new Date(endDateInput.value);
+
+    const leftTime = endDate - now;
 
     if (leftTime <= 0) {
       clearInterval(countinDown);
-      (document.getElementById("expiredTime").textContent =
-        "your rente is expiered "),
-        leftTime;
+      document.getElementById("expiredTime").textContent =
+        "❌ Your rent has expired!";
       return;
     }
 
-    // calculate time
+    // Calcul du temps restant
+    let daysNum = Math.floor(leftTime / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((leftTime / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((leftTime / (1000 * 60)) % 60);
+    let seconds = Math.floor((leftTime / 1000) % 60);
 
-    const day = Math.floor(leftTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((leftTime / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((leftTime / (1000 * 60)) % 60);
-    const seconds = Math.floor((leftTime / 1000) % 60);
-    document.querySelector(
-      ".showTime"
-    ).textContent = `${day}d  ${hours}h ${minutes}m ${seconds}s   `;
+    // Formatage avec zéro devant si < 10
+
+    // days = days < 10 ? "0" + days : days;
+    let days = daysNum < 10 ? "0" + daysNum : "" + daysNum;
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    days += daysNum >= 1 ? "day" : "days";
+
+    // Affichage
+    document.getElementById("day").textContent = `${days}`;
+    document.getElementById("hour").textContent = `${hours}h`;
+    document.getElementById("minute").textContent = `${minutes}m`;
+    document.getElementById("second").textContent = `${seconds}s`;
+
+    document.getElementById("expiredTime").textContent = "";
   }, 1000);
 });
+
 stopBtn.addEventListener("click", () => {
   clearInterval(countinDown);
-  document.querySelector(".showTime").textContent = "counting stoped";
-  document.querySelector(".showTime").style.color = "yellow";
-  stopBtn.classList.add("d-none");
-  startCounting.classList.remove("d-none");
+  document.getElementById("expiredTime").textContent = "⏸️ Counting paused.";
+  document.getElementById("expiredTime").style.display = "flex";
+  document.getElementById("expiredTime").style.display = "orange";
+
+  stopBtn.style.display = "none";
+  startCounting.style.display = "flex";
 });

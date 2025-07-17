@@ -74,6 +74,30 @@
         margin: 10px 20px;
         font-size: 40px;
       }
+
+      #clientName {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        color: transparent;
+        background: linear-gradient(90deg, #f7d794, #f6b93b, #f19066, #e55039);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s linear infinite;
+        letter-spacing: 1px;
+        margin-top: 30px;
+      }
+
+      @keyframes shine {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -278,7 +302,9 @@
             Rest assured, we are doing our best to find an option that meets
             your expectations.
           </p>
-          <button class="btn btn-dark rounded-4 border-3 text-primary fs-5 fw-bold bnt-back">
+          <button
+            class="btn btn-dark rounded-4 border-3 text-primary fs-5 fw-bold bnt-back"
+          >
             Go back
           </button>
           <div class="mt-3">
@@ -309,7 +335,14 @@
               </h5>
 
               <!-- inputs -->
-              <input type="date" class="form-control mb-2 py-3" id="date" />
+              <input
+                type="text"
+                placeholder="Enter the time you will be living"
+                onclick="this.type='date'"
+                onblur="this.type='text'"
+                class="form-control mb-2 py-3"
+                id="date"
+              />
               <span id="errorMessage" class="text-danger fw-bold small"></span>
             </div>
 
@@ -318,7 +351,14 @@
                 Please Choose book out time
               </h5>
 
-              <input type="date" class="form-control mb-2 py-3" id="endDate" />
+              <input
+                type="text"
+                placeholder="Enter the date of checking out"
+                onclick="this.type='date'"
+                onblur="this.type='text'"
+                class="form-control mb-2 py-3"
+                id="endDate"
+              />
               <span id="endDateError" class="text-danger fw-bold small"></span>
             </div>
             <p class="mt-3 text-white lead fw-bold">Select room type</p>
@@ -390,7 +430,8 @@
 
       <!-- Étape 5 : Timer -->
       <div id="counting-div" class="text-center d-none">
-        <div class="justify-content-center h-100">
+        <div class="justify-content-center h-100 p-4">
+          <h1 id="clientName" class=""></h1>
           <h2 class="display-5 text-warning">Your rent expires in:</h2>
 
           <div class="display-5 showTime d-flex gap-2 text-center">
@@ -402,13 +443,13 @@
           <p id="expiredTime" class="text-danger display-5 fw-bold"></p>
           <button
             id="startbtn"
-            class="btn btn-dark mt-3 text-success px-5 rounded-4"
+            class="btn btn-dark mt-3 text-success px-5 rounded-4 fw-bolder f-5 w-25 display-6"
           >
             Start
           </button>
           <button
             id="stopBtn"
-            class="btn btn-dark mt-2 text-warning d-none px-5 rounded-4"
+            class="btn btn-dark mt-2 text-warning d-none px-5 rounded-4 fw-bolder w-25 display-6"
           >
             Stop counting
           </button>

@@ -168,6 +168,9 @@ continuebtn.addEventListener("click", () => {
   document.getElementById("choice-btn").classList.add("d-none");
   const countingDiv = document.getElementById("counting-div");
   countingDiv.classList.remove("d-none");
+  document.getElementById(
+    "clientName"
+  ).textContent = ` Dear customer *${saveuserName} ${savelastName}*Thank you for trust us!`;
 
   const startDateRaw = dateInput.value;
   const endDateRaw = endDateInput.value;
@@ -207,7 +210,7 @@ let countinDown = "";
 startCounting.addEventListener("click", () => {
   document.getElementById("expiredTime").style.display = "none";
 
-  startCounting.style.display = "none";
+  startCounting.classList.add("d-none");
   stopBtn.classList.remove("d-none");
   const startDateRaw = dateInput.value;
   const endDateRaw = endDateInput.value;
@@ -219,11 +222,11 @@ startCounting.addEventListener("click", () => {
   const timeLeft = newEndDate - now;
 
   if (timeLeft <= 0) {
-    document.getElementById("expiredTime").style.display = "block";
+    document.getElementById("expiredTime").classList.remove("d-none");
     document.getElementById("expiredTime").textContent =
       "⏳ The rent has not started yet.";
     stopBtn.classList.add("d-none");
-    startCounting.style.display = "block";
+    startCounting.classList.add("d-flex");
     return;
   }
 
@@ -235,6 +238,7 @@ startCounting.addEventListener("click", () => {
 
     if (leftTime <= 0) {
       clearInterval(countinDown);
+      document.getElementById("expiredTime").classList.remove("d-none");
       document.getElementById("expiredTime").textContent =
         "❌ Your rent has expired!";
       return;
@@ -267,10 +271,11 @@ startCounting.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
   clearInterval(countinDown);
-  document.getElementById("expiredTime").textContent = "⏸️ Counting paused.";
-  document.getElementById("expiredTime").style.display = "flex";
-  document.getElementById("expiredTime").style.display = "orange";
+  document.getElementById("expiredTime").style.display = "block";
 
-  stopBtn.style.display = "none";
-  startCounting.style.display = "flex";
+  document.getElementById("expiredTime").textContent = "⏸️ Counting paused.";
+  document.getElementById("expiredTime").style.color = "orange";
+
+  stopBtn.classList.add("d-none");
+  startCounting.classList.remove("d-none");
 });
